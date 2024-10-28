@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;  
+}
+
+.LoginPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.LoginPage .wrapper {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #53C7E1;
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.LoginPage h2 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.LoginPage h2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width:28px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.LoginPage form {
+    margin-top: 30px; 
+}
+
+.LoginPage form .input-box {
+    height: 25;
+    margin: 15px 0;
+}
+
+.LoginPage form .input-box input{
+    height: 50px;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.LoginPage .input-box input:focus,
+.LoginPage .input-box input:valid{
+    border-color: #333;
+}
+
+.LoginPage .policy {
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.LoginPage .input-box.button input {
+    color: #333;
+    letter-spacing: 1px;
+    border: none;
+    background: #fff;
+
+    cursor: pointer;
+} 
+.LoginPage .input-box.button input:hover{
+    color: #53C7E1;
+    transition: all 0.5s ease;
+}
+
+.LoginPage .text h3 a {
+    color: rgb(22, 64, 112);
+}
+
+.LoginPage .text h3 a:hover {
+    text-decoration: underline;
+}
