@@ -3,21 +3,37 @@ import "../css/Login.css";
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await login({ username, password });
+
+        if (response.success) {
+            navigate("/dashboard");
+        } else {
+            setError(response.error);
+        }
+    };
+
     return (
         <div className="LoginPage">
             <div className="wrapper">
                 <h2>LOGIN</h2>
-                <form action = "#">
+                <form onSubmit={handleSubmit}>
                     <div className = "input-box">
-                        <input type='text' placeholder='Enter your username' required />
+                        <input type='text' placeholder='Enter your username' required
+                        value = {username} 
+                        onChange={(e) => setUsername(e.target.value)}/>
                     </div>
                     <div className = "input-box">
-                        <input type='password' placeholder='Enter your password'  required />
+                        <input type='password' placeholder='Enter your password'  required 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}/>
                     </div>
-                    {/* <div className = "policy">
-                        <input type='checkbox' />
-                        <h3>I accept terms & conditions</h3>
-                    </div> */}
                     <div className="input-box button">
                         <input type="submit" value="LOGIN" />
                     </div>
