@@ -39,6 +39,7 @@ const Login = () => {
                     </div>
                     <div className='text'>
                         <h3>Dont have an account? <Link to="/register"><a>Register</a></Link></h3>
+                        {error && <h3 style={{ color: "red" }}>{error}</h3>}
                     </div>
                 </form>
             </div>
