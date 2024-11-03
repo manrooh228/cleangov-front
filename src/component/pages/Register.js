@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../css/Login.css";
-import React from 'react';
+import React, {useState}from 'react';
+
+const API_URL = 'http://localhost:1306/main/register';
 
 const Register = () => {
     const [username, setUsername] = useState("");

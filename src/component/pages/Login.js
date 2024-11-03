@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from "react";
 import "../css/Login.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
+import { login } from "../../api/UserService.js";
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ const Login = () => {
         const response = await login({ username, password });
 
         if (response.success) {
-            navigate("/dashboard");
+            navigate("/");
         } else {
             setError(response.error);
         }
