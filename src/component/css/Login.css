@@ -19,7 +19,7 @@
     position: relative;
     max-width: 430px;
     width: 100%;
-    background: #53C7E1;
+    background: #1D587A;
     padding: 34px;
     border-radius: 6px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -91,12 +91,12 @@ h3 {
     cursor: pointer;
 } 
 .LoginPage .input-box.button input:hover{
-    color: #53C7E1;
+    color: #1D587A;
     transition: all 0.5s ease;
 }
 
 .LoginPage .text h3 a {
-    color: rgb(22, 64, 112);
+  color: #0492ba;
 }
 
 .LoginPage .text h3 a:hover {
