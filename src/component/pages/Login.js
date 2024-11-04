@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/Login.css";
 import { Link, useNavigate} from 'react-router-dom';
 import { login } from "../../api/UserService.js";
+import Header from "./Header.js";
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -21,6 +22,8 @@ const Login = () => {
     };
 
     return (
+        <>
+        <Header />
         <div className="LoginPage">
             <div className="wrapper">
                 <h2>LOGIN</h2>
@@ -45,6 +48,7 @@ const Login = () => {
                 </form>
             </div>
         </div>
+        </>
     )
 };
 

@@ -1,0 +1,34 @@
+.Header {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+}
+.Header .wrapper {
+    min-height: 8vh;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 23%;
+    width: 100%;
+    background: #1D587A;
+}
+
+.Header .logo {
+    margin-left: 50px;
+}
+
+.Header .wrapper .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 50px;
+}
+
+.Header h1 {
+    color: white;
+}
+
+.Header .bx-user {
+    font-size: 32px;
+}
