@@ -5,11 +5,12 @@
 }
 .Header .wrapper {
     min-height: 8vh;
+    max-height: 10vh;
     align-items: center;
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
-    gap: 23%;
+    /* flex-wrap:wrap; */
+    gap: 23vw;
     width: 100%;
     background: #1D587A;
 }
@@ -21,12 +22,12 @@
 .Header .wrapper .menu {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
-    gap: 50px;
+    /* flex-wrap:wrap; */
+    gap: 2vw;
 }
 
 .Header h1 {
-    font-size: 3.5vh; 
+    font-size: 1.7vw; 
     color: white;
 }
 
