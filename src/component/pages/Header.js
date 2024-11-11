@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../css/Header.css"
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
-    
+    const navigate = useNavigate();
+
     const handleInvestigClick = () => {
         // navigate("/investigations");
     };
@@ -12,6 +13,11 @@ const Header = () => {
     const handleTutorialClick = () => {
         // navigate("/tutorial");
     };
+
+    const handleLoginClick = () => {
+        setIsLoggedIn(true);
+        navigate("/login", { replace: true });
+    }   
 
 
     return (
@@ -29,7 +35,7 @@ const Header = () => {
                     {isLoggedIn ? (
                         <h1><i className="bx bxs-user-circle" style={{marginLeft: 50, fontSize: 50}}></i><i class='bx bx-menu' style={{marginLeft: 10, fontSize: 50}}></i></h1>
                     ) : (
-                        <h1><i className="bx bx-user"></i> LOGIN</h1>
+                        <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>
                     )}
                 </div>
             </div>

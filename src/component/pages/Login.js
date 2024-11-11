@@ -23,7 +23,6 @@ const Login = () => {
 
     return (
         <>
-        <Header />
         <div className="LoginPage">
             <div className="wrapper">
                 <h2>LOGIN</h2>

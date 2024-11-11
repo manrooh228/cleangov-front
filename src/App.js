@@ -8,7 +8,6 @@ import Header from './component/pages/Header.js';
 function App() {
   return (
     <>
-    <Header />
    <Router>
       <Routes>
       <Route path="/" element={<Navigate to="/map" replace />} />

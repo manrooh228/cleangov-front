@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/MapPage.css'
+import Header from './Header';
 
 const MapPage = () => {
   // Координаты маркеров
@@ -10,6 +11,8 @@ const MapPage = () => {
   ];
 
   return (
+    <>
+    <Header />
     <div className="map-container">
       <img src={require("../img/map.jpg")} alt="City Map" className="map-image" />
       <div className="map-overlay"></div> 
@@ -27,6 +30,7 @@ const MapPage = () => {
         </button>
       ))}
     </div>
+    </>
   );
 };
 
