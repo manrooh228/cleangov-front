@@ -1,0 +1,78 @@
+/* Контейнер, который подстраивается под размер экрана */
+.map-container {
+  position: relative;
+  width: 100vw; /* 100% ширины окна */
+  height: 100vh; /* 100% высоты окна */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: auto;
+}
+
+/* Изображение карты, которое масштабируется по размеру контейнера */
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Масштабирование и обрезка изображения без пустых областей */
+  display: block;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Черный слой с 50% прозрачностью */
+  z-index: 1; /* Затемняющее наложение поверх изображения */
+}
+
+
+
+.map-marker {
+  position: absolute;
+  background: white; /* Цвет маркера */
+  border: none;
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translate(-50%, -50%); /* Центрирование маркера */
+  z-index: 2;
+}
+
+/* Для больших экранов (ноутбуки и выше) */
+@media (min-width: 1640px) {
+  .map-container {
+    max-width: 1640px;
+  }
+}
+
+/* Для планшетов */
+@media (max-width: 768px) {
+  .map-container {
+    max-width: 600px;
+  }
+  .map-marker {
+    width: 15px;
+    height: 15px;
+    font-size: 14px;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 480px) {
+  .map-container {
+    max-width: 400px;
+  }
+  .map-marker {
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+  }
+}
+
+
