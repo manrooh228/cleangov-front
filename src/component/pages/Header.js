@@ -5,7 +5,7 @@ const Header = () => {
     const navigate = useNavigate();
 
     const handleInvestigClick = () => {
-        // navigate("/investigations");
+        navigate("/investigations");
     };
     const [isLoggedIn, setIsLoggedIn] = useState(false);//проверка на логин? если залогиненый то показывает кнопку
     // пока не доработан, по стоку false
@@ -14,10 +14,13 @@ const Header = () => {
         // navigate("/tutorial");
     };
 
-    const handleLoginClick = () => {
+    const handleLoginClick = () => {    
         setIsLoggedIn(true);
         navigate("/login", { replace: true });
-    }   
+    }  
+    const handleMapClick = () => {    
+        navigate("/map");
+    }    
 
 
     return (
@@ -27,13 +30,13 @@ const Header = () => {
                     <h1>CleanGov</h1>
                 </div>
                 <div className="menu">
-                    <h1>Map</h1>
-                    <h1 onClick={handleInvestigClick()}>Investigations</h1>
-                    <h1 onClick={handleTutorialClick()}>Tutorial</h1>
+                    <h1 onClick={handleMapClick}>Map</h1>
+                    <h1 onClick={handleInvestigClick}>Investigations</h1>
+                    <h1 onClick={handleTutorialClick}>Tutorial</h1>
                 </div>
                 <div>
                     {isLoggedIn ? (
-                        <h1><i className="bx bxs-user-circle" style={{marginLeft: 50, fontSize: 50}}></i><i class='bx bx-menu' style={{marginLeft: 10, fontSize: 50}}></i></h1>
+                        <h1><i className="bx bxs-user-circle"></i><i class='bx bx-menu'></i></h1>
                     ) : (
                         <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>
                     )}

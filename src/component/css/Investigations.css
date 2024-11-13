@@ -1,0 +1,56 @@
+.investigations-page {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.investigations-page .main-container {
+    width: 95vw;
+    height: 90vh;
+    position: relative;
+    align-items: center;
+    justify-content: center; 
+    margin: auto;
+    background: #E2E2E2;
+}
+
+.investigations-page .investigations-list{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 150px 0;
+    column-gap: 7rem;
+    row-gap: 1rem;
+    max-width: 100%;
+    align-items:flex-start;
+}
+
+.investigations-page .row{
+    cursor: pointer;
+    width: 500px;
+    padding: 1vw;
+    height: 50vh; /* vremenno */
+    min-height: 20vh;
+    max-height: 50vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break:keep-all;
+    text-align: center;
+    margin: 3px 0;
+    align-content: start;   
+}
+
+
+.beginner {
+    color: green;
+  }
+  
+  .middle {
+    color: #C36A2A;
+  }
+  
+  .professional {
+    color: #FF0000;
+  }
+  
