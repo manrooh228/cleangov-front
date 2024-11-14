@@ -1,11 +1,13 @@
+
 .investigations-page {
-    position: relative;
+    height: 80%;
     margin: 0;
     padding: 0;
+    z-index: 9999;
 }
 
 .investigations-page .main-container {
-    width: 95vw;
+    width: 98vw;
     height: 90vh;
     position: relative;
     align-items: center;
@@ -13,13 +15,44 @@
     margin: auto;
     background: #E2E2E2;
 }
+.investigations-page .main-container .title-container {
+    padding-top: 5vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    flex-direction: column; 
+}
+.investigations-page .main-container .title-container .menu {
+    display: flex;
+    padding-top: 2vh;
+    gap: 3vw;
+    flex-direction: row;
+}
+
+.investigations-page .main-container .title-container .menu button {
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    width: 15vw;
+    height: 5vh;
+    box-shadow: 3px 3px 15px #1D587A;
+}
+
+.investigations-page .main-container .title-container .menu  .menu-inv-list {
+    box-shadow: 4px 4px 40px #1D587A;
+}
+
+.investigations-page .main-container .title-container .menu p {
+    font-size: 1vw;
+}
 
 .investigations-page .investigations-list{
     font-size: 16px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 150px 0;
+    padding: 100px 0;
     column-gap: 7rem;
     row-gap: 1rem;
     max-width: 100%;
@@ -39,6 +72,7 @@
     text-align: center;
     margin: 3px 0;
     align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
 }
 
 
