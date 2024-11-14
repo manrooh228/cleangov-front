@@ -1,14 +1,12 @@
 
 .investigations-page {
-    height: 80%;
     margin: 0;
     padding: 0;
-    z-index: 9999;
 }
 
 .investigations-page .main-container {
-    width: 98vw;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
     position: relative;
     align-items: center;
     justify-content: center; 
@@ -16,7 +14,7 @@
     background: #E2E2E2;
 }
 .investigations-page .main-container .title-container {
-    padding-top: 5vh;
+    padding-top: 12vh;
     text-align: center;
     align-items: center;
     justify-content: center; 
@@ -29,38 +27,40 @@
     gap: 3vw;
     flex-direction: row;
 }
-
+.investigations-page .main-container .title-container h1 {
+    color: #1D587A;
+}
 .investigations-page .main-container .title-container .menu button {
     border: none;
     background-color: white;
     border-radius: 15px;
     width: 15vw;
     height: 5vh;
-    box-shadow: 3px 3px 15px #1D587A;
+    box-shadow: 0px 0px 15px #1D587A;
+    cursor: pointer;
 }
 
 .investigations-page .main-container .title-container .menu  .menu-inv-list {
-    box-shadow: 4px 4px 40px #1D587A;
+    box-shadow: 5px 5px 40px #0973b1;
 }
 
 .investigations-page .main-container .title-container .menu p {
     font-size: 1vw;
+    color:#1D587A;
 }
 
 .investigations-page .investigations-list{
-    font-size: 16px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 100px 0;
+    padding: 4%;
     column-gap: 7rem;
     row-gap: 1rem;
-    max-width: 100%;
+    width: 100%;
     align-items:flex-start;
 }
 
 .investigations-page .row{
-    cursor: pointer;
     width: 500px;
     padding: 1vw;
     height: 50vh; /* vremenno */
@@ -74,7 +74,34 @@
     align-content: start;   
     box-shadow: 3px 5px 20px #1D587A;
 }
+.investigations-page .row .investigation-level {
+    margin-bottom: 2vh;
+}
 
+.investigations-page .investigation-info-panel {
+    min-height: 10vh;
+    max-height: 20vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break: break-all;
+    text-align: center;
+    margin: 3px 0;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+.investigations-page .investigation-info-panel .panel-title{
+    text-align: left;
+    padding-left: 2vw;
+    padding-top: 2vh;
+}
+
+.investigations-page .investigation-info-panel .panel-info {
+    text-align: left;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    margin-bottom: 2vh;
+    max-width: 430px;
+}
 
 .beginner {
     color: green;
@@ -88,3 +115,13 @@
     color: #FF0000;
   }
   
+@media (max-width: 480px) {
+    .investigations-page .main-container .title-container .menu button {
+        width: 25vw;
+        height: 5vh;
+    }
+
+    .investigations-page .main-container .title-container .menu p {
+        font-size: 2vw;
+    }
+}

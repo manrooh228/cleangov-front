@@ -4,21 +4,28 @@ import Header from "./Header";
 
 const Investigations = () => {
     //primer
+    
     const invests = [
         {
             id: 1,
             name: 'Investigation in a bank',
-            level: 'beginner'
+            level: 'beginner',
+            desc: 'Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba',
+            progress: 75
         },
         {
             id: 2,
             name: 'Investigation in a web company',
-            level: 'middle'
+            level: 'middle',
+            desc: 'Lorem inpsum adil prikol kuat bomba',
+            progress: 75
         },
         {
             id: 3,
             name: 'Investigation in IT-company',
-            level: 'professional'
+            level: 'professional',
+            desc: 'Lorem inpsum adil prikol kuat bomba',
+            progress: 75
         },
       ];
 
@@ -51,11 +58,12 @@ const Investigations = () => {
                                     <h5>About Investigation</h5>
                                 </div>
                                 <div className="panel-info">
-                                    
+                                    <h5>{invest.desc}</h5>
                                 </div>
                             </div>
                             <div className="invesstigation-progress-panel">
-
+                                    <h4>Progress</h4>
+                                    <h3>{invest.progress}/100</h3>
                             </div>
                         </div>
                     ))}
