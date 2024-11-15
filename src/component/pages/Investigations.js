@@ -1,9 +1,11 @@
 import React from "react";
 import "../css/Investigations.css"
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
 
 const Investigations = () => {
     //primer
+    const navigate = useNavigate();
     
     const invests = [
         {
@@ -11,24 +13,27 @@ const Investigations = () => {
             name: 'Investigation in a bank',
             level: 'beginner',
             desc: 'Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba',
-            progress: 75
+            progress: 62
         },
         {
             id: 2,
             name: 'Investigation in a web company',
             level: 'middle',
             desc: 'Lorem inpsum adil prikol kuat bomba',
-            progress: 75
+            progress: 0
         },
         {
             id: 3,
             name: 'Investigation in IT-company',
             level: 'professional',
             desc: 'Lorem inpsum adil prikol kuat bomba',
-            progress: 75
+            progress: 100
         },
       ];
-
+    
+      const handleInvestListClick = () => {    
+        navigate("/investigations");
+    }    
 
     return (
         <>
@@ -38,7 +43,7 @@ const Investigations = () => {
                 <div className="title-container">
                     <h1>CITY I: Corruption</h1>
                     <div className="menu">
-                        <button className="menu-inv-list"><p>Investigations list</p></button>
+                        <button className="menu-inv-list" onClick={handleInvestListClick}><p>Investigations list</p></button>
                         <button className="menu-vid-mat"><p>Video materials</p></button>
                         <button className="menu-achiv"><p>Achievements</p></button>
                     </div>
@@ -61,10 +66,11 @@ const Investigations = () => {
                                     <h5>{invest.desc}</h5>
                                 </div>
                             </div>
-                            <div className="invesstigation-progress-panel">
+                            <div className="investigation-progress-panel">
                                     <h4>Progress</h4>
                                     <h3>{invest.progress}/100</h3>
                             </div>
+                            <button className="inv-start"><p>START</p></button>
                         </div>
                     ))}
                 </div>
