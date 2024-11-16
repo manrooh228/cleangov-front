@@ -157,11 +157,52 @@
 }
 @media (max-width: 480px) {
     .investigations-page .main-container .title-container .menu button {
-        width: 25vw;
+        width: 28vw;
         height: 5vh;
     }
 
     .investigations-page .main-container .title-container .menu p {
-        font-size: 2vw;
+        font-size: 2.8vw;
+    }
+
+
+
+    .investigations-page .investigation-info-panel .panel-title{
+        text-align: left;
+        padding-left: 5vw;
+        padding-top: 2vh;
+    }
+    .investigations-page .investigation-info-panel .panel-info {
+        text-align: left;
+        padding-left: 5vw;
+        padding-top: 2vh;
+        margin-bottom: 2vh;
+        max-width: 350px;
+    }
+
+
+
+
+    .investigations-page .investigations-list .investigation-progress-panel {
+        gap: 200px;
+    }
+    .investigations-page .investigations-list .investigation-progress-panel h4 {
+        padding-top: 1vh;
+        padding-left: 5vw;
+        text-align: left;
+    }
+    .investigations-page .investigations-list .investigation-progress-panel h3 {
+        padding-top: 1vh;
+        text-align: right;
+    }
+
+
+    .investigations-page .investigations-list .row button{
+        width: 35vw;
+        margin-bottom: 2vh;
+    }
+    .investigations-page .investigations-list .row button p {
+        font-size: 5vw;
+        color:green;
     }
 }

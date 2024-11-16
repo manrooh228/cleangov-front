@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate }  from 'react-router-
 import Login from '../src/component/pages/Login.js'
 import Register from './component/pages/Register.js';
 import MapPage from './component/pages/MapPage.js';
-import Header from './component/pages/Header.js';
+// import Header from './component/pages/Header.js';
 import Investigations from './component/pages/Investigations.js';
 function App() {
   return (
