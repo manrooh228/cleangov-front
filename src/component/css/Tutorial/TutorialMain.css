@@ -1,0 +1,140 @@
+.tutorial-main-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 25vh;
+
+    flex-wrap: wrap;
+    column-gap: 7rem;
+    row-gap: 1rem;
+}
+
+/* TUORIAL PANEL */
+.tutorial-main-page .tutorial-panel {
+    width: 400px;
+    padding: 1vw;
+    min-height: 40vh;
+    max-height: 60vh;
+    background: #1D587A;
+    border-radius: 15px;
+    word-break:keep-all;
+    text-align: center;
+    margin: 3px 0;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #fff;
+}
+
+.tutorial-main-page .tutorial-panel .panel-name {
+    padding-top: 2vh ;
+    margin-bottom: 3vh;
+}
+
+.tutorial-main-page .tutorial-panel .description-panel {
+    min-height: 10vh;
+    max-height: 40vh;
+    background: #1D587A;
+    border-radius: 15px;
+    word-break: break-all;
+    text-align: center;
+    margin: 3px;
+    margin-bottom: 4vh ;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #fff;
+    
+}
+
+.tutorial-main-page .tutorial-panel .description-panel .panel-title{
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.tutorial-main-page .tutorial-panel .description-panel .panel-info {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 2vh;
+    max-width: 340px;
+}
+
+.tutorial-panel h2, .tutorial-panel h5 {
+    color: #fff;
+}
+
+.tutorial-main-page .tutorial-panel button{
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    width: 10vw;
+    height: 5vh;
+    box-shadow: 0px 0px 15px #1D587A;
+    cursor: pointer;
+    margin-bottom: 2vh;
+}
+
+.tutorial-main-page .tutorial-panel p{
+    font-size: 1.2vw;
+    color:green;
+}
+
+
+
+
+
+/* Additional Panel */
+
+.tutorial-main-page .additional-panel {
+    width: 600px;
+    padding: 40px;
+    min-height: 40vh;
+    max-height: 60vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break:keep-all;
+    text-align: left;
+    margin: 3px 0;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+
+.tutorial-main-page .additional-panel .panel-name {
+    margin-bottom: 3vh;
+}
+
+.tutorial-main-page .additional-panel .AboutUs-panel {
+    height: 8vh;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    gap: 320px;
+    margin: 3px;
+    margin-bottom: 4vh;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+
+.tutorial-main-page .additional-panel .UsedMaterials-panel {
+    height: 8vh;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    gap: 245px;
+    margin: 3px;
+    margin-bottom: 4vh;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+
+.tutorial-main-page .additional-panel i {
+    color: #1D587A;
+    font-size: 38px;
+}
+
+.additional-panel h2 {
+    color: #1D587A;
+}
