@@ -39,17 +39,25 @@ const TutorialMain = () => {
                     <button className="inv-start"><p>START</p></button>
                 </div>
                 {isMobile ? (
-                    <div className="additional-panel">
-                        {/* <div className="panel-title">
-                            <h3>Start Tutorial</h3>
-                        </div> */}
-                </div>
+                    <div className="mobile-panel">
+                        <div className="elements">
+                            <div className = "AboutUs">
+                                <i class='bx bxs-chip'></i>
+                                <h5>About us</h5>
+                            </div>
+                            <div className = "UsedMat">
+                                <i class='bx bxs-pin' ></i>
+                                <h5>Used materials</h5>
+                            </div>
+                        </div>
+                    </div>
+                    // mobile verssion
                 ) : (
                     <div className="additional-panel">
                         <div className="panel-name">
                             <div className="panel-title">
                                 <h2>Additional information</h2>
-                            </div>
+                            </div>  
                         </div>
                         <div className="AboutUs-panel">
                             <h2>About Us</h2>
