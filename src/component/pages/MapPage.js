@@ -1,11 +1,12 @@
 import React from 'react';
 import '../css/MapPage.css'
 import Header from './Header';
+import LeftInvestigationsPanel from './LeftInvestigationsPanel';
 
 const MapPage = () => {
   // Координаты маркеров
   const markers = [
-    { id: 1, x: "15%", y: "30%" },
+    { id: 1, x: "35%", y: "30%" },
     { id: 2, x: "40%", y: "50%" },
     { id: 3, x: "60%", y: "20%" },
   ];
@@ -13,6 +14,7 @@ const MapPage = () => {
   return (
     <>
     <Header />
+    <LeftInvestigationsPanel />
     <div className="map-container">
       <img src={require("../img/map.jpg")} alt="City Map" className="map-image" />
       <div className="map-overlay"></div> 
