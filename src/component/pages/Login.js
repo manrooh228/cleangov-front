@@ -3,18 +3,22 @@ import "../css/Login.css";
 import { Link, useNavigate} from 'react-router-dom';
 import { login } from "../../api/UserService.js";
 import Header from "./Header.js";
+import { useUser } from "../../api/context/UserProfile.js";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const { setUser } = useUser();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await login({ username, password });
 
         if (response.success) {
+            setUser({ username, id: response.data });
             navigate("/");
         } else {
             setError(response.error);
