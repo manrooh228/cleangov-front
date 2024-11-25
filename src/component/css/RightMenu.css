@@ -1,0 +1,18 @@
+.right-menu-main {
+    position: absolute;
+    z-index: 9999;
+    top: 10vh;
+    right: 2vw;
+    width: 20vw;
+    background: #fff;
+    border-radius: 20px ;
+}
+
+/* .right-menu-main .right-menu-panel {
+
+} */
+
+.right-menu-main .right-menu-panel h1, h2 {
+    color: #1D587A;
+    padding: 4%;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../css/MapPage.css'
 import LeftInvestigationsPanel from './LeftInvestigationsPanel';
 import { useNavigate } from "react-router-dom";
+import RightMenu from "./RightMenu";
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -50,8 +51,13 @@ const MapPage = () => {
   }    
 
   const handleUserClick = () => {
+    if(showRightPanel){
+      setShowLeftPanel(true);
+      setShowRightPanel(false);
+    } else {
       setShowLeftPanel(false);
-      setShowRightPanel(true)
+      setShowRightPanel(true);
+    }
   }
 
   return (
@@ -77,28 +83,16 @@ const MapPage = () => {
                 <div>
                     {isLoggedIn ? (
                         <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i class='bx bx-menu'></i></h1>
-                    ) : (
+                    ) : ( 
                         <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>
                     )}
                 </div>
             </div>
     </div>
 
-    {showLeftPanel ?(
-        <LeftInvestigationsPanel />
-    ) : (
-        null
-    )}
+    {showLeftPanel && (<LeftInvestigationsPanel />)}
     
-    {showRightPanel ?(
-        <div className="right-menu-main">
-            <div className="">
-
-            </div>
-        </div>
-    ) : (
-      null
-    )}
+    {showRightPanel && (<RightMenu />)}
 
     <div className="map-container">
       <img src={require("../img/map.jpg")} alt="City Map" className="map-image" />
