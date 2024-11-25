@@ -1,6 +1,6 @@
 .inv-leftpanel-main {
     position: absolute;
-    z-index: 9999;
+    z-index: 50;
     top: 10vh;
     left: 2vw;
 }

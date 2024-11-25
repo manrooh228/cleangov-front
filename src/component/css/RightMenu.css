@@ -1,6 +1,6 @@
 .right-menu-main {
     position: absolute;
-    z-index: 9999;
+    z-index: 10;
     top: 10vh;
     right: 2vw;
     width: 20vw;

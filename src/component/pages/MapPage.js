@@ -51,6 +51,10 @@ const MapPage = () => {
   }    
 
   const handleUserClick = () => {
+    
+  }
+
+  const handleMenuClick = () => {
     if(showRightPanel){
       setShowLeftPanel(true);
       setShowRightPanel(false);
@@ -82,7 +86,7 @@ const MapPage = () => {
                 )}
                 <div>
                     {isLoggedIn ? (
-                        <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i class='bx bx-menu'></i></h1>
+                        <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i class='bx bx-menu' onClick={handleMenuClick}></i></h1>
                     ) : ( 
                         <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>
                     )}
