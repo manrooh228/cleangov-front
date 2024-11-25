@@ -3,7 +3,7 @@ import "../css/RightMenu.css"
 
 const RightMenu = () => {
 
-    
+
 
     return (
         <>
@@ -13,7 +13,11 @@ const RightMenu = () => {
               <hr></hr>
             </div>
             <div className="right-menu-panel">
-                <h2>Profile</h2>
+                <h2>Select a City(In Work)</h2>
+                <hr></hr>
+            </div>
+            <div className="right-menu-panel">
+                <h2>Preferences</h2>
                 <hr></hr>
             </div>
             <div className="right-menu-panel">
