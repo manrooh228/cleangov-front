@@ -1,0 +1,10 @@
+.profile-main-panel {
+    position: absolute;
+    z-index: 10;
+    top: 10vh;
+    right: 2vw;
+    width: 20vw;
+    background: #fff;
+    border-radius: 20px;
+    padding: 2%;
+}

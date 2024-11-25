@@ -12,7 +12,7 @@
 
 } */
 
-.right-menu-main .right-menu-panel h1, h2 {
+.right-menu-main .right-menu-panel h1, .right-menu-main .right-menu-panel h2 {
     color: #1D587A;
     padding: 4%;
 }

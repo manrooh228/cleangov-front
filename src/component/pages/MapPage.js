@@ -3,6 +3,7 @@ import '../css/MapPage.css'
 import LeftInvestigationsPanel from './LeftInvestigationsPanel';
 import { useNavigate } from "react-router-dom";
 import RightMenu from "./RightMenu";
+import Profile from "./Profile";
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -23,6 +24,8 @@ const MapPage = () => {
   // Координаты маркеров
   const [showLeftPanel, setShowLeftPanel] = useState(true);
   const [showRightPanel, setShowRightPanel] = useState(false);
+  const [showProfilePanel, setShowProfilePanel] = useState(false);
+
   const markers = [
     { id: 1, x: "35%", y: "30%" },
     { id: 2, x: "40%", y: "50%" },
@@ -51,7 +54,13 @@ const MapPage = () => {
   }    
 
   const handleUserClick = () => {
-    
+    if(showRightPanel || showLeftPanel){
+      setShowProfilePanel(true);
+      setShowLeftPanel(false);
+      setShowRightPanel(false);
+    } else {
+      setShowProfilePanel(true);
+    }
   }
 
   const handleMenuClick = () => {
@@ -97,6 +106,8 @@ const MapPage = () => {
     {showLeftPanel && (<LeftInvestigationsPanel />)}
     
     {showRightPanel && (<RightMenu />)}
+
+    {showProfilePanel && (<Profile />)}
 
     <div className="map-container">
       <img src={require("../img/map.jpg")} alt="City Map" className="map-image" />
