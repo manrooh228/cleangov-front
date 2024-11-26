@@ -4,6 +4,7 @@ import LeftInvestigationsPanel from './LeftInvestigationsPanel';
 import { useNavigate } from "react-router-dom";
 import RightMenu from "./RightMenu";
 import Profile from "./Profile";
+import { useUser } from "../../api/context/UserProfile";
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -22,6 +23,7 @@ const useIsMobile = () => {
 
 const MapPage = () => {
   // Координаты маркеров
+  const { user } = useUser();
   const [showLeftPanel, setShowLeftPanel] = useState(true);
   const [showRightPanel, setShowRightPanel] = useState(false);
   const [showProfilePanel, setShowProfilePanel] = useState(false);
@@ -36,16 +38,17 @@ const MapPage = () => {
 
   const handleInvestigClick = () => {
       navigate("/investigations");
-  };
-  const [isLoggedIn, setIsLoggedIn] = useState(true);//проверка на логин? если залогиненый то показывает кнопку
-  // пока не доработан, по стоку false    
-
+  };  
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);//проверка на логин? если залогиненый то показывает кнопку
+  // // пока не доработан, по стоку false    
+  // if(user.username != null) {
+  //   setIsLoggedIn(true);
+  // }
   const handleTutorialClick = () => {
       navigate("/tutorial");
   };
 
-  const handleLoginClick = () => {    
-      setIsLoggedIn(true);
+  const handleLoginClick = () => {        
       navigate("/login", { replace: true });
   }  
 
@@ -54,12 +57,14 @@ const MapPage = () => {
   }    
 
   const handleUserClick = () => {
-    if(showRightPanel || showLeftPanel){
-      setShowProfilePanel(true);
-      setShowLeftPanel(false);
+    if(showProfilePanel){
+      setShowProfilePanel(false);
+      setShowLeftPanel(true);
       setShowRightPanel(false);
     } else {
       setShowProfilePanel(true);
+      setShowLeftPanel(false);
+      setShowRightPanel(false);
     }
   }
 
@@ -68,6 +73,7 @@ const MapPage = () => {
       setShowLeftPanel(true);
       setShowRightPanel(false);
     } else {
+      setShowProfilePanel(false);
       setShowLeftPanel(false);
       setShowRightPanel(true);
     }
@@ -94,7 +100,7 @@ const MapPage = () => {
                     </div>
                 )}
                 <div>
-                    {isLoggedIn ? (
+                    {user ? (
                         <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i class='bx bx-menu' onClick={handleMenuClick}></i></h1>
                     ) : ( 
                         <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>

@@ -16,14 +16,15 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await login({ username, password });
-
+    
         if (response.success) {
-            setUser({ username, id: response.data });
+            setUser(response.user); // Сохраняем объект пользователя в контекст
+            console.log(response);
             navigate("/");
         } else {
             setError(response.error);
         }
-    };
+    };    
 
     return (
         <>
@@ -33,7 +34,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                     <div className = "input-box">
                         <input type='text' placeholder='Enter your username' required
-                        value = {username} 
+                        value={username} 
                         onChange={(e) => setUsername(e.target.value)}/>
                     </div>
                     <div className = "input-box">

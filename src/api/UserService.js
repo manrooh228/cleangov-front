@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:1306/main/';
 export async function login(newUser) {
     try {
         const response = await axios.post(API_URL + 'login', newUser);
-        return { success: true, data: response.data };
+        return { success: true, user: response.data };
     } catch (error) {
         if (error.response) {
             return { success: false, error: error.response.data };
