@@ -1,10 +1,30 @@
-import React from "react";
-import "../css/Investigations.css"
+import React, { useState, useEffect } from "react";
+import "../css/InvestigationList.css"
 import Header from "./Header";
+import { getAvailableInvestigations, getInvestigationsWithProgress } from "../../api/InvestigationsService";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../api/context/UserProfile.js";
 
-const Investigations = () => {
-    //primer
+const InvestigationList = () => {
+    const { user } = useUser();
+    const [availableInvestigations, setAvailableInvestigations] = useState([]);
+
+    useEffect(() => {
+    if (!user || !user.id) return;
+
+        // Загружаем доступные дела
+        const fetchAvailableInvestigations = async () => {
+            try {
+                const data = await getAvailableInvestigations();
+                setAvailableInvestigations(data);
+            } catch (error) {
+                console.error("Error fetching available investigations:", error);
+            }
+        };
+
+        fetchAvailableInvestigations();
+}, [user]);
+
     const navigate = useNavigate();
     
     const invests = [
@@ -38,6 +58,9 @@ const Investigations = () => {
     return (
         <>
         <Header />
+        {(!user || !user.id) ? (
+            <h1>u are not logged in</h1>
+            ) : (  
         <div className="investigations-page">
             <div className="main-container">
                 <div className="title-container">
@@ -49,7 +72,7 @@ const Investigations = () => {
                     </div>
                 </div>
                 <div className='investigations-list'>
-                    {invests.map((invest, index) => (
+                    {availableInvestigations.map((invest, index) => (
                         <div key={index} className="row">
                             <div className="investigation-name">
                                 <h3>Investigation #{invest.id}</h3>
@@ -63,7 +86,7 @@ const Investigations = () => {
                                     <h5>About Investigation</h5>
                                 </div>
                                 <div className="panel-info">
-                                    <h5>{invest.desc}</h5>
+                                    <h5>{invest.description}</h5>
                                 </div>
                             </div>
                             <div className="investigation-progress-panel">
@@ -76,8 +99,11 @@ const Investigations = () => {
                 </div>
             </div>
         </div>
+            ) }
+
+        
         </>
     )
 }
 
-export default Investigations;
+export default InvestigationList;

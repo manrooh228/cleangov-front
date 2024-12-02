@@ -19,7 +19,6 @@ const Login = () => {
     
         if (response.success) {
             setUser(response.user); // Сохраняем объект пользователя в контекст
-            console.log(response);
             navigate("/");
         } else {
             setError(response.error);
