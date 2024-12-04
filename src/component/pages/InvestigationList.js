@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/InvestigationList.css"
 import Header from "./Header";
-import { getAvailableInvestigations } from "../../api/InvestigationsService";
+import { getInvestigationsWithProgress } from "../../api/InvestigationsService";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../api/context/UserProfile.js";
 
@@ -13,16 +13,17 @@ const InvestigationList = () => {
     if (!user || !user.id) return;
 
         // Загружаем доступные дела
-        const fetchAvailableInvestigations = async () => {
+        const fetchInvestigationsWithProgress = async () => {
             try {
-                const data = await getAvailableInvestigations();
+                const data = await getInvestigationsWithProgress(user.id);
                 setAvailableInvestigations(data);
+                console.log(data)
             } catch (error) {
                 console.error("Error fetching available investigations:", error);
             }
         };
 
-        fetchAvailableInvestigations();
+        fetchInvestigationsWithProgress();
 }, [user]);
 
     const navigate = useNavigate();
@@ -75,18 +76,18 @@ const InvestigationList = () => {
                     {availableInvestigations.map((invest, index) => (
                         <div key={index} className="row">
                             <div className="investigation-name">
-                                <h3>Investigation #{invest.id}</h3>
-                                <h3>{invest.name}</h3>  
+                                <h3>Investigation #{invest.investigation.id}</h3>
+                                <h3>{invest.investigation.name}</h3>  
                             </div>
-                            <div className={`investigation-level ${invest.level}`}>
-                                    <h5>Level: {invest.level}</h5>
+                            <div className={`investigation-level ${invest.investigation.level}`}>
+                                    <h5>Level: {invest.investigation.level}</h5>
                             </div>
                             <div className="investigation-info-panel">
                                 <div className="panel-title">
                                     <h5>About Investigation</h5>
                                 </div>
                                 <div className="panel-info">
-                                    <h5>{invest.description}</h5>
+                                    <h5>{invest.investigation.description}</h5>
                                 </div>
                             </div>
                             <div className="investigation-progress-panel">
