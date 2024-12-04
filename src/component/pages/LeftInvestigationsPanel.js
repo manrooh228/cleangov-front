@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { getAvailableInvestigations, getInvestigationsWithProgress } from "../../api/InvestigationsService";
+import { getAvailableInvestigations, getTasksWithProgress } from "../../api/InvestigationsService";
 import "../css/LeftInvestigationsPanel.css";
 import { useUser } from "../../api/context/UserProfile";
 
 const LeftInvestigationsPanel = () => {
     const { user } = useUser(); // Получаем данные пользователя из контекста
     const [availableInvestigations, setAvailableInvestigations] = useState([]);
-    const [ongoingInvestigations, setOngoingInvestigations] = useState([]);
+    const [ongoingTasks, setOngoingTasks] = useState([]);
     const [showAvailable, setShowAvailable] = useState(false);
     const [showOngoing, setShowOngoing] = useState(false);
 
@@ -29,8 +29,8 @@ const LeftInvestigationsPanel = () => {
         // Загружаем дела с прогрессом
         const fetchOngoingInvestigations = async () => {
             try {
-                const data = await getInvestigationsWithProgress(user.id);
-                setOngoingInvestigations(data);
+                const data = await getTasksWithProgress(user.id);
+                setOngoingTasks(data);
             } catch (error) {
                 console.error("Error fetching investigations with progress:", error);
             }
@@ -72,15 +72,15 @@ const LeftInvestigationsPanel = () => {
                         onMouseEnter={() => setShowOngoing(true)}
                         onMouseLeave={() => setShowOngoing(false)}
                     >
-                        <h3>Ongoing investigations</h3>
+                        <h3>Ongoing tasks</h3>
                         {showOngoing && (
                             <ul>
-                                {ongoingInvestigations.length > 0 ? (
-                                    ongoingInvestigations.map((investigation) => (
-                                        <li key={investigation.id}>{investigation.name}</li>
+                                {ongoingTasks.length > 0 ? (
+                                    ongoingTasks.map((task) => (
+                                        <li key={task.id}>{task.name}</li>
                                     ))
                                 ) : (
-                                    <li>No ongoing investigations</li>
+                                    <li>No ongoing task</li>
                                 )}
                             </ul>
                         )}

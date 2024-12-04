@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/InvestigationList.css"
 import Header from "./Header";
-import { getAvailableInvestigations, getInvestigationsWithProgress } from "../../api/InvestigationsService";
+import { getAvailableInvestigations } from "../../api/InvestigationsService";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../api/context/UserProfile.js";
 
@@ -27,29 +27,29 @@ const InvestigationList = () => {
 
     const navigate = useNavigate();
     
-    const invests = [
-        {
-            id: 1,
-            name: 'Investigation in a bank',
-            level: 'beginner',
-            desc: 'Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba',
-            progress: 62
-        },
-        {
-            id: 2,
-            name: 'Investigation in a web company',
-            level: 'middle',
-            desc: 'Lorem inpsum adil prikol kuat bomba',
-            progress: 0
-        },
-        {
-            id: 3,
-            name: 'Investigation in IT-company',
-            level: 'professional',
-            desc: 'Lorem inpsum adil prikol kuat bomba',
-            progress: 100
-        },
-      ];
+    // const invests = [
+    //     {
+    //         id: 1,
+    //         name: 'Investigation in a bank',
+    //         level: 'beginner',
+    //         desc: 'Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba Lorem inpsum adil prikol kuat bomba',
+    //         progress: 62
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Investigation in a web company',
+    //         level: 'middle',
+    //         desc: 'Lorem inpsum adil prikol kuat bomba',
+    //         progress: 0
+    //     },
+    //     {
+    //         id: 3,
+    //         name: 'Investigation in IT-company',
+    //         level: 'professional',
+    //         desc: 'Lorem inpsum adil prikol kuat bomba',
+    //         progress: 100
+    //     },
+    //   ];
     
       const handleInvestListClick = () => {    
         navigate("/investigations");
@@ -91,7 +91,11 @@ const InvestigationList = () => {
                             </div>
                             <div className="investigation-progress-panel">
                                     <h4>Progress</h4>
-                                    <h3>{invest.progress}/100</h3>
+                                    {(!invest.progress) ? (
+                                        <h3>0/100</h3>
+                                    ) : (
+                                        <h3>{invest.progress}/100</h3>
+                                    )} 
                             </div>
                             <button className="inv-start"><p>START</p></button>
                         </div>

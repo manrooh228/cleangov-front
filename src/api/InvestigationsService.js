@@ -12,14 +12,14 @@ export const getAvailableInvestigations = async () => {
     }
 };
 
-export const getInvestigationsWithProgress = async (userId) => {
+export const getTasksWithProgress = async (userId) => {
     try {
         const response = await axios.get(`${API_BASE_URL}/progress`, {
             params: { userId },
         });
         return response.data;
     } catch (error) {
-        console.error("Error fetching investigations with progress:", error);
+        console.error("Error fetching tasks with progress:", error);
         throw error;
     }
 };
