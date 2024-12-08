@@ -10,23 +10,25 @@ const Profile = () => {
         {/* {user ? ( */}
             <div className="profile-main-panel">
                 <div className="profile-user-panel">
-                    <div className="profile-user-pic"></div>
-                    <h4>{user.username}</h4>
-                    <h5>{user.id}</h5>
+                    <div className="profile-user-pic"><i className='bx bxs-user-circle'></i></div>
+                    <div className="progile-user-info">
+                        <h2>{user.username}</h2>
+                        <h3>{user.name} {user.surname}</h3>
+                    </div>
                     {/* <h4>user.username</h4>
                     <h5>user.id</h5> */}
                 </div>
                 <div className="profile-button">
-                    <h3>Achievements</h3>
+                    <h2>Achievements</h2>
                 </div>
                 <div className="profile-button">
-                    <h3>Edit Profile</h3>
+                    <h2>Edit Profile</h2>
                 </div>
                 <div className="profile-button">
-                    <h3>Request for Transcript</h3>
+                    <h2>Request for Transcript</h2>
                 </div>
                 <div className="profile-button">
-                    <h3>Log Out</h3>
+                    <h2>Log Out</h2>
                 </div>
             </div>
         {/* ) : (
