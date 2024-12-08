@@ -56,6 +56,11 @@ const InvestigationList = () => {
         navigate("/investigations");
     }    
 
+    const handleStartClick = (investigationId) => {
+        navigate(`/tasks/${investigationId}`);
+    };
+    
+
     return (
         <>
         <Header />
@@ -98,7 +103,8 @@ const InvestigationList = () => {
                                         <h3>{invest.progress}/100</h3>
                                     )} 
                             </div>
-                            <button className="inv-start"><p>START</p></button>
+                            <button className="inv-start" 
+                            onClick={() => handleStartClick(invest.investigation.id)}><p>START</p></button>
                         </div>
                     ))}
                 </div>

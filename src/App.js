@@ -7,6 +7,8 @@ import MapPage from './component/pages/MapPage.js';
 // import Header from './component/pages/Header.js';
 import InvestigationList from './component/pages/InvestigationList.js';
 import TutorialMain from './component/pages/Tutorial/TutorialMain.js';
+import TaskPage from './component/pages/TaskPage.js';
+
 function App() {
   return (
     <>
@@ -18,6 +20,7 @@ function App() {
       <Route path="investigations" element={<InvestigationList />} />
       <Route path="/register" element={<Register />} />
       <Route path="/tutorial" element={<TutorialMain />} />
+      <Route path="/tasks/:investigationId" element={<TaskPage />} />
       </Routes>
    </Router>
    </>
