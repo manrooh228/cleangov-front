@@ -88,9 +88,9 @@ const MapPage = () => {
                 </div>
                 {isMobile ?(
                     <div className="menu">
-                        <h1 onClick={handleMapClick}><i class='bx bx-map-alt'></i></h1>
-                        <h1 onClick={handleInvestigClick}><i class='bx bx-task'></i></h1>
-                        <h1 onClick={handleTutorialClick}><i class='bx bxs-book-alt'></i></h1>
+                        <h1 onClick={handleMapClick}><i className='bx bx-map-alt'></i></h1>
+                        <h1 onClick={handleInvestigClick}><i className='bx bx-task'></i></h1>
+                        <h1 onClick={handleTutorialClick}><i className='bx bxs-book-alt'></i></h1>
                     </div>
                 ) : (
                     <div className="menu">
@@ -101,7 +101,7 @@ const MapPage = () => {
                 )}
                 <div>
                     {user ? (
-                        <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i class='bx bx-menu' onClick={handleMenuClick}></i></h1>
+                        <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i className='bx bx-menu' onClick={handleMenuClick}></i></h1>
                     ) : ( 
                         <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>
                     )}

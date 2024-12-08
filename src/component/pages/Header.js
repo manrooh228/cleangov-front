@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../css/Header.css"
 import { useNavigate } from "react-router-dom";
+import { useUser } from "../../api/context/UserProfile";
+// import LeftInvestigationsPanel from './LeftInvestigationsPanel';
+import RightMenu from "./RightMenu";
+import Profile from "./Profile";
 
 const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -18,13 +22,17 @@ const useIsMobile = () => {
   };
 
 const Header = () => {
+    const { user } = useUser();
     const isMobile = useIsMobile();
     const navigate = useNavigate();
+    // const [showLeftPanel, setShowLeftPanel] = useState(true);
+    const [showRightPanel, setShowRightPanel] = useState(false);
+    const [showProfilePanel, setShowProfilePanel] = useState(false);
 
     const handleInvestigClick = () => {
         navigate("/investigations");
     };
-    const [isLoggedIn, setIsLoggedIn] = useState(false);//проверка на логин? если залогиненый то показывает кнопку
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);//проверка на логин? если залогиненый то показывает кнопку
     // пока не доработан, по стоку false    
 
     const handleTutorialClick = () => {
@@ -32,7 +40,7 @@ const Header = () => {
     };
 
     const handleLoginClick = () => {    
-        setIsLoggedIn(true);
+        // setIsLoggedIn(true);
         navigate("/login", { replace: true });
     }  
 
@@ -40,8 +48,37 @@ const Header = () => {
         navigate("/map");
     }    
 
+    const handleUserClick = () => {
+        if(showProfilePanel){
+          setShowProfilePanel(false);
+        //   setShowLeftPanel(true);
+          setShowRightPanel(false);
+        } else {
+          setShowProfilePanel(true);
+        //   setShowLeftPanel(false);
+          setShowRightPanel(false);
+        }
+      }
+    
+      const handleMenuClick = () => {
+        if(showRightPanel){
+        //   setShowLeftPanel(true);
+          setShowRightPanel(false);
+        } else {
+          setShowProfilePanel(false);
+        //   setShowLeftPanel(false);
+          setShowRightPanel(true);
+        }
+      }
+    
 
     return (
+        <>
+    {/* {showLeftPanel && (<LeftInvestigationsPanel />)} */}
+    
+    {showRightPanel && (<RightMenu />)}
+
+    {showProfilePanel && (<Profile />)}
         <div className="Header">
             <div className="wrapper">
                 <div className="logo">
@@ -61,14 +98,15 @@ const Header = () => {
                     </div>
                 )}
                 <div>
-                    {isLoggedIn ? (
-                        <h1><i className="bx bxs-user-circle"></i><i class='bx bx-menu'></i></h1>
-                    ) : (
+                    {user ? (
+                        <h1><i className="bx bxs-user-circle" onClick={handleUserClick}></i><i className='bx bx-menu' onClick={handleMenuClick}></i></h1>
+                    ) : ( 
                         <h1 onClick={handleLoginClick}><i className="bx bx-user"></i> LOGIN</h1>
                     )}
                 </div>
             </div>
         </div>
+        </>
     )
 }
 
