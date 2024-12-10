@@ -1,3 +1,155 @@
 .tasks-page {
-    padding-top: 12vh;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: center; 
+}
+
+.tasks-page .tasks-page-title  {
+    padding-top: 13vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    display: flex;
+    flex-direction: column; 
+}
+
+
+.tasks-page .tasks-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 4%;
+    column-gap: 7rem;
+    row-gap: 1rem;
+    width: 100%;
+    align-items:flex-start;
+}
+
+.tasks-page .tasks-list .video-main-panel {
+    width: 25vw;
+    padding: 1vw;
+    min-height: 20vh;
+    max-height: 50vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break:keep-all;
+    text-align: center;
+    margin: 3px 0;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+.tasks-page .tasks-list .video-main-panel .video-main-title{
+    margin-bottom: 2vh;
+}
+.tasks-page .tasks-list .video-main-panel .video-description-panel {
+    min-height: 5vh;
+    max-height: 20vh;
+    background: #fff;
+    border-radius: 15px;
+    padding: 4%;
+    word-break: break-all;
+    text-align: center;
+    margin: 3px;
+    margin-bottom: 3vh ;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+
+.tasks-page .tasks-list .video-main-panel .video-completed-panel {
+    min-height: 2vh;
+    max-height: 10vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break: break-all;
+    text-align: center;
+    margin: 3px;
+    margin-bottom: 3vh ;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+    display: flex;
+    flex-direction: row; 
+}
+
+.tasks-page .tasks-list .video-main-panel .video-completed-panel .panel-title {
+    padding: 4%;
+    padding-left: 5%;
+}
+.tasks-page .tasks-list .video-main-panel .video-completed-panel .checkbox {
+    padding: 3%;
+    margin-left: 11.5vw;
+}
+
+.tasks-page .tasks-list .video-main-panel .video-completed-panel .checkbox button {
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    width: 1.5vw;
+    height: 1.5vw;
+    box-shadow: 0px 0px 15px #1D587A;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+
+.tasks-page .tasks-list .video-main-panel .video-completed-panel .checkbox button i{
+    font-size: 1vw;
+    color: #1D587A;
+}
+
+.tasks-page h3, .tasks-page h4, .tasks-page h2, .tasks-page h1 {
+    color: #1D587A;
+}
+
+.tasks-page .tasks-list button {
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    width: 10vw;
+    height: 5vh;
+    box-shadow: 0px 0px 15px #1D587A;
+    cursor: pointer;
+}
+
+.tasks-page .tasks-list button p {
+    font-size: 1.2vw;
+    color:green;
+}
+
+.tasks-page .tasks-list .result-panel {
+    min-height: 2vh;
+    max-height: 15vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break: break-all;
+    text-align: center;
+    margin: 3px;
+    margin-bottom: 3vh ;
+    align-content: start;   
+    box-shadow: 3px 5px 20px #1D587A;
+    display: flex;
+    flex-direction: row; 
+}
+
+.tasks-page .tasks-list .result-panel .panel-title {
+    padding: 4%;
+    padding-left: 5%;
+}
+
+.tasks-page .tasks-list .result-panel .result {
+    margin-left: 10.5vw;
+    margin-top: 1vh;
+
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    width: 4vw;
+    height: 2vw;
+    box-shadow: 0px 0px 15px #1D587A;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
 }
