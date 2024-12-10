@@ -9,6 +9,7 @@ import InvestigationList from './component/pages/InvestigationList.js';
 import TutorialMain from './component/pages/Tutorial/TutorialMain.js';
 import TaskPage from './component/pages/TaskPage.js';
 
+
 function App() {
   return (
     <>
