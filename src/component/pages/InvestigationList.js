@@ -10,7 +10,9 @@ const InvestigationList = () => {
     const [availableInvestigations, setAvailableInvestigations] = useState([]);
 
     useEffect(() => {
-    if (!user || !user.id) return;
+    if (!user || !user.id) {
+        return;
+    }
 
         // Загружаем доступные дела
         const fetchInvestigationsWithProgress = async () => {
@@ -65,7 +67,7 @@ const InvestigationList = () => {
         <>
         <Header />
         {(!user || !user.id) ? (
-            <h1>u are not logged in</h1>
+            alert('User not logged in. Investigations not available')
             ) : (  
         <div className="investigations-page">
             <div className="main-container">

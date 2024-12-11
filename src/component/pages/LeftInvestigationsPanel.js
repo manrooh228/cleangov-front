@@ -43,10 +43,7 @@ const LeftInvestigationsPanel = () => {
     return (
         <div className="inv-leftpanel-main">
             {(!user || !user.id) ? (
-                <div className="left-panel">
-                    <h3>User not logged in</h3>
-                    <p>Investigations are not available. Please log in.</p>
-                </div>
+                alert('User not logged in. Investigations not available')
             ) : (
                 <>
                     <div

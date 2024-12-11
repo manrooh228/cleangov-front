@@ -39,11 +39,7 @@ const MapPage = () => {
   const handleInvestigClick = () => {
       navigate("/investigations");
   };  
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);//проверка на логин? если залогиненый то показывает кнопку
-  // // пока не доработан, по стоку false    
-  // if(user.username != null) {
-  //   setIsLoggedIn(true);
-  // }
+
   const handleTutorialClick = () => {
       navigate("/tutorial");
   };
