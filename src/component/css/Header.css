@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row;
     /* flex-wrap:wrap; */
-    gap: 23vw;
+    gap: 19vw;
     width: 100%;
     background: #1D587A;
 }
@@ -21,12 +21,18 @@
     display: flex;
     flex-direction: row;
     /* flex-wrap:wrap; */
-    gap: 2vw;
+    gap: 3.5vw;
 }
 
 .Header h1 {
     font-size: 1.7vw; 
     color: white;
+    cursor: pointer;
+}
+
+.Header:hover h1:hover {
+    color: rgb(167, 172, 154);
+    transition: all 0.3s ease;
 }
 
 .Header .bx-user {

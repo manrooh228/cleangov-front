@@ -84,7 +84,7 @@ const MapPage = () => {
     <div className="Header">
             <div className="wrapper">
                 <div className="logo">
-                    <h1>CleanGov</h1>
+                    <h1>CleanGOV</h1>
                 </div>
                 {isMobile ?(
                     <div className="menu">
@@ -94,9 +94,9 @@ const MapPage = () => {
                     </div>
                 ) : (
                     <div className="menu">
-                        <h1 onClick={handleMapClick}>Map</h1>
-                        <h1 onClick={handleInvestigClick}>Investigations</h1>
-                        <h1 onClick={handleTutorialClick}>Tutorial</h1>
+                        <h1 onClick={handleMapClick}>CITY MAP</h1>
+                        <h1 onClick={handleInvestigClick}>INVESTIGATION</h1>
+                        <h1 onClick={handleTutorialClick}>TUTORIAL</h1>
                     </div>
                 )}
                 <div>
