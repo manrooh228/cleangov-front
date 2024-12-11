@@ -134,7 +134,7 @@ const TaskPage = () => {
                                 </div>
                                 <div className="result-panel">
                                     <div className="panel-title">
-                                        <h4>Completed?</h4>    
+                                        <h4>Your score</h4>    
                                     </div>
                                     <div className="result">
                                         <h4>100/100</h4> {/* vremenno */}
