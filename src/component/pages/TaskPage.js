@@ -4,8 +4,12 @@ import "../css/TasksPage.css"; // Добавьте стили при необх�
 import { getTasksWithProgress } from "../../api/TasksService";
 import Header from "./Header";
 import { useUser } from "../../api/context/UserProfile.js";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { API_BASE_URL } from "../../api/API_BASE_URL.js";
 
 const TaskPage = () => {
+    const navigate = useNavigate();
     const { user } = useUser();
     const { investigationId } = useParams();
     const [tasks, setTasks] = useState([]);
@@ -34,6 +38,29 @@ const TaskPage = () => {
         return <div>{error}</div>;
     }
 
+    const fetchTestId = async (taskId) => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/tests/task/${taskId}`);
+            if (response.data && response.data.length > 0) {
+                return response.data[0].id; // Возвращаем id первого теста
+            } else {
+                console.error("No test found for this task.");
+            }
+        } catch (error) {
+            console.error("Failed to fetch test ID:", error);
+        }
+    };
+    
+    
+    // Вызовите fetchTestId при нажатии кнопки
+    const handleStartTest = async (taskId) => {
+        const testId = await fetchTestId(taskId);
+        if (testId) {
+            navigate(`/tests/${testId}`);
+        } else {
+            console.error("Test ID is not available for this task.");
+        }
+    };
     return (
         <>
             <Header />
@@ -114,7 +141,7 @@ const TaskPage = () => {
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start"><p>START</p></button>
+                                    <button className="inv-start" onClick={() => handleStartTest(task.id)}><p>START</p></button> //при нажатии начать тест
                                 )}
                             </div>
 

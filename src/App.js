@@ -8,6 +8,7 @@ import MapPage from './component/pages/MapPage.js';
 import InvestigationList from './component/pages/InvestigationList.js';
 import TutorialMain from './component/pages/Tutorial/TutorialMain.js';
 import TaskPage from './component/pages/TaskPage.js';
+import TestPage from './component/pages/TestPage.js';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/tutorial" element={<TutorialMain />} />
       <Route path="/tasks/:investigationId" element={<TaskPage />} />
+      <Route path="/tests/:testId" element={<TestPage />} />
       </Routes>
    </Router>
    </>
