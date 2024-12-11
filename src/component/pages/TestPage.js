@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useUser } from "../../api/context/UserProfile.js";
 import { API_BASE_URL } from "../../api/API_BASE_URL.js";
 import { useNavigate } from "react-router-dom";
+import "../css/TestPage.css";
 
 const TestPage = () => {
     const { testId } = useParams();
@@ -55,7 +56,16 @@ const TestPage = () => {
     // Отправка результата теста
     const handleSubmit = async () => {
         let correctAnswers = 0;
-    
+        
+        const unansweredQuestions = questions.filter(
+            question => !answers.hasOwnProperty(question.id)
+        );
+        if (unansweredQuestions.length > 0) {
+            alert("Пожалуйста, ответьте на все вопросы перед отправкой.");
+            return;
+        }
+
+        
         // Подсчёт правильных ответов
         questions.forEach(question => {
             const correctAnswer = question.answers.find(answer => answer.correct);
@@ -73,7 +83,7 @@ const TestPage = () => {
             const result = {
                 test: { id: testId },  // Отправляем ID теста
                 user: { id: userId },  // Отправляем ID пользователя
-                successPercentage: percentage,
+                successPercentage: percentage
             };
     
             await axios.post(`${API_BASE_URL}/tests/save-result`, result); // Отправка объекта
@@ -81,7 +91,7 @@ const TestPage = () => {
             const progress = {
                 userId,
                 taskId,  // Мне нужен таскАйди
-                progress: 100,
+                progress: 100
             };
     
             await axios.post(`${API_BASE_URL}/progress/update`, progress); // Обновляем прогресс
@@ -98,12 +108,17 @@ const TestPage = () => {
     }
 
     return (
-        <div>
-            <h2>Тест</h2>
+        <div className="test-page">
+            <div className="title-container">
+                <h2>A test for verification knowledge</h2>
+            </div>
+            <div className="ans-quest-container">
             {Array.isArray(questions) && questions.length > 0 ? (
                 questions.map(question => (
-                    <div key={question.id}>
-                        <h3>{question.textRu}</h3>
+                    <div key={question.id} className="main-container">
+                        <div className="question">
+                            <h3>{question.textRu}</h3>
+                        </div>
                         <ul>
                             {question.answers.map(answer => (
                                 <li key={answer.id}>
@@ -115,7 +130,9 @@ const TestPage = () => {
                                             checked={answers[question.id] === answer.id}
                                             onChange={() => handleAnswerSelect(question.id, answer.id)}
                                         />
+                                        <div className="answer">
                                         {answer.textRu}
+                                        </div>
                                     </label>
                                 </li>
                             ))}
@@ -125,7 +142,10 @@ const TestPage = () => {
             ) : (
                 <p>Loading...</p>
             )}
-            <button onClick={handleSubmit}>Finish</button>
+            </div>
+            <div className="bottom">
+                <button onClick={handleSubmit}><p>Finish</p></button>
+            </div>
         </div>
     );
 };

@@ -1,0 +1,86 @@
+.test-page {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+    justify-content: center; 
+    margin: auto;
+}
+
+.test-page .title-container {
+    padding-top: 8vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+}
+
+.test-page h2, .test-page h3, .test-page h4, .test-page h5{ 
+    color: #1D587A
+}
+
+.test-page .ans-quest-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2%;
+    column-gap: 7rem;
+    row-gap: 1rem;
+    width: 100%;
+    align-items:center;
+}
+ul, ol {
+    list-style: none; /* Убирает маркеры */
+    padding: 0; /* Убирает отступы */
+    margin: 0; /* Убирает внешние отступы */
+  }
+.test-page .main-container {
+    min-width: 20vw;
+    padding: 2vw;
+    max-height: 100vh;
+    background: #fff;
+    border-radius: 15px;
+    word-break:keep-all;
+    text-align: center;
+    margin: 3px 0;   
+    box-shadow: 3px 5px 20px #1D587A;
+}
+
+.test-page .main-container label {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    padding: 3%;
+    padding-left: 10%;
+}
+
+.test-page .main-container label input {
+    width: 2vw;
+}
+
+.test-page .question {
+    margin-bottom: 2vh;
+}
+
+.test-page .bottom {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items:center;
+}
+.test-page button {
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+    width: 15vw;
+    height: 8vh;
+    box-shadow: 0px 0px 15px #1D587A;
+    cursor: pointer;
+}
+
+.test-page button p {
+    font-size: 1.2vw;
+    color:green;
+}
