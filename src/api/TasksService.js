@@ -1,10 +1,9 @@
 import axios from "axios";
-
-const API_BASE_URL = "http://localhost:1306/tasks";
+import { API_BASE_URL } from "./API_BASE_URL";
 
 export const getTasksWithProgress = async (investigationId, userId) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/by-investigation`, {
+        const response = await axios.get(`${API_BASE_URL}/tasks/by-investigation`, {
             params: { investigationId, userId },
         });
         console.log(response.data);

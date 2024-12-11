@@ -1,10 +1,9 @@
 import axios from "axios";
-
-const API_BASE_URL = "http://localhost:1306/investigations";
+import { API_BASE_URL } from "./API_BASE_URL";
 
 export const getAvailableInvestigations = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/all`);
+        const response = await axios.get(`${API_BASE_URL}/investigations/all`);
         console.log(response.data);
         return response.data;
     } catch (error) {
@@ -15,7 +14,7 @@ export const getAvailableInvestigations = async () => {
 
 export const getTasksWithProgress = async (userId) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/progress`, {
+        const response = await axios.get(`${API_BASE_URL}/investigations/progress`, {
             params: { userId },
         });
         console.log(response.data);
@@ -28,7 +27,7 @@ export const getTasksWithProgress = async (userId) => {
 
 export const getInvestigationsWithProgress = async (userId) => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/all-with-progress`, {
+        const response = await axios.get(`${API_BASE_URL}/investigations/all-with-progress`, {
             params: { userId },
         });
         console.log(response.data)
