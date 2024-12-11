@@ -61,6 +61,24 @@ const TaskPage = () => {
             console.error("Test ID is not available for this task.");
         }
     };
+
+
+    const handleUpdateProgress = async (taskId) => {
+        try {
+            const progress = {
+                userId: user.id,
+                taskId: taskId,
+                progress: 100, // Задача выполнена
+            };
+            await axios.post(`${API_BASE_URL}/progress/update`, progress);
+            alert("Прогресс обновлен!");
+            navigate('/investigations');
+        } catch (error) {
+            console.error("Error updating progress:", error);
+        }
+    };
+
+    
     return (
         <>
             <Header />
@@ -102,7 +120,7 @@ const TaskPage = () => {
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start"><p>START</p></button>
+                                    <button className="inv-start" onClick={() => handleUpdateProgress(task.id)}><p>START</p></button>//сюда
                                 )}
                             </div>
                         ) :
@@ -161,7 +179,7 @@ const TaskPage = () => {
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start"><p>START</p></button>
+                                    <button className="inv-start" onClick={() => handleUpdateProgress(task.id)}><p>START</p></button>
                                 )}
                             </div>
                         ) : (

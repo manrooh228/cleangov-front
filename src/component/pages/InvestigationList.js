@@ -99,7 +99,7 @@ const InvestigationList = () => {
                             </div>
                             <div className="investigation-progress-panel">
                                     <h4>Progress</h4>
-                                    {(!invest.progress) ? (
+                                    {(invest.progress) ? (
                                         <h3>0/100</h3>
                                     ) : (
                                         <h3>{invest.progress}/100</h3>
