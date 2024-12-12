@@ -68,7 +68,9 @@ const Profile = () => {
                 <div className="achieves-main-panel">
                     <div className="achieves-title-panel">
                         <h1>Achivements</h1>
+                    <div className="krestik">    
                         <h1 onClick={handleAchievemntClick}>x</h1>
+                        </div>
                     </div>
                     <div className="achieves-list">
                         <div className="achivement-item">

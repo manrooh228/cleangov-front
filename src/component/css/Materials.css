@@ -1,11 +1,64 @@
 .materials-main-panel {
     position: absolute;
     top: 10vh;
+    left: 4.1vh;
     z-index: 50;
-    width: 70vw;
-    height: 70vh;
+    width: 96vw;
+    height: 100vh;
     min-height: 28.2vw;
     background: #fff;
     border-radius: 20px ;
     box-shadow: 0px 0px 30px #1D587A;
+}
+
+.materials-top-title {
+    font-size: larger;
+    display: flex;
+    box-sizing: border-box;
+    gap: 10vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5vh;
+    color: #1D587A;
+}
+
+hr {
+    margin: 2vh 2vh;
+    height: 5px;
+    border: none;
+    border-top: 2px solid #1D587A;
+    width: 50vh;
+    margin: 8px 70vh;
+
+}
+
+.krestik1 {
+    position: absolute;
+    top: 5vh;
+    right: 17vh;
+    color: #1D587A;
+    cursor: pointer;
+}
+
+.materials-top {
+    position: absolute;
+    top: 15vh;
+    left: 10vw;
+    z-index: 50;
+    width: 75vw;
+    height: 5vh;
+    min-height: 35vh;
+    background: #1D587A;
+    border-radius: 20px ;
+    box-shadow: 0px 0px 10px #000000;
+    color: white;
+    padding: 3vh 5vh;
+    font-size: small;
+}
+
+.materials-img {
+    padding: 5vh 10vw;
+    
+        
 }
