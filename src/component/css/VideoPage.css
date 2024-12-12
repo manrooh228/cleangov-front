@@ -1,0 +1,19 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Светлый фон */
+}
+
+.video-box {
+    width: 600px;
+    height: 400px;
+    background-color: #000; /* Чёрный фон для квадрата */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #ccc; /* Рамка */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

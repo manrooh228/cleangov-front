@@ -9,7 +9,7 @@ import InvestigationList from './component/pages/InvestigationList.js';
 import TutorialMain from './component/pages/Tutorial/TutorialMain.js';
 import TaskPage from './component/pages/TaskPage.js';
 import TestPage from './component/pages/TestPage.js';
-
+import VideoPage from './component/pages/VIdeoPage.js';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
       <Route path="/tutorial" element={<TutorialMain />} />
       <Route path="/tasks/:investigationId" element={<TaskPage />} />
       <Route path="/tests/:testId" element={<TestPage />} />
+      <Route path="/video" element={<VideoPage />} />
       </Routes>
    </Router>
    </>
