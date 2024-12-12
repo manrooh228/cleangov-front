@@ -16,10 +16,15 @@
     color: #1D587A;
 }
 
+.krestik {
+    cursor: pointer;
+}
+
 .achieves-main-panel .achieves-title-panel {
     display: flex;
     flex-direction: row;
     gap: 18vw;
+    
 }
 .achieves-main-panel .achieves-list {
     padding-left: 2%;
