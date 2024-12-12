@@ -111,7 +111,7 @@ const InvestigationList = () => {
                                     <button className="inv-start" 
                                     onClick={() => handleStartClick(invest.investigation.id)}><p>{t('buttons.start')}</p></button>
                                 ) : (
-                                    <button className="inv-start"><p>{t('buttons.completed')}</p></button>
+                                    <button className="inv-start"><p>{t('buttons.comleted')}</p></button>
                                 )} 
                         </div>
                     ))}
