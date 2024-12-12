@@ -41,7 +41,8 @@
     flex-wrap: wrap;
     flex-direction: column;
 }
-.achieves-main-panel .achieves-list .achivement-item h4 {
+.achieves-main-panel .achieves-list .achivement-item a {
+    font-size: 2vw;
     padding-top: 10%;
     color: #1D587A;
 }

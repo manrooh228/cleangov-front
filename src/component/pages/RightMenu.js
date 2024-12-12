@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import React, { useState } from "react";
 import "../css/RightMenu.css"
 import { useTranslation } from "react-i18next";
 import { useUser } from "../../api/context/UserProfile";
@@ -17,7 +16,7 @@ const RightMenu = () => {
     const currentLanguage = i18n.language;
 
     const changeLanguage = (lng) => {
-      i18n.changeLanguage(lng);
+      // i18n.changeLanguage(lng);
     };
   const handleMatClick = () => {
     setShowMat((prev) => !prev);
@@ -135,17 +134,22 @@ const RightMenu = () => {
               <h1 onClick={handleMatClick}>x</h1>
             </div>
             <div className="materials-top">
-              <h2>Objection #1 Cleaning the Spot</h2>
-              <div className="materials-info">
-                <h3>In this objection we talk about the cleaning some kind of spotts that located near lakes or ozers. I dont give a info about everything that happens beetwen this neck and what to drink some kind of drink while working on the laptop. In this objection we talk about the cleaning some kind of spotts that located near lakes or ozers. I dont give a info about everything that happens beetwen this neck and what to drink some kind of drink while working on the laptop. In this objection we talk about the cleaning some kind of spotts that located near lakes or ozers. I dont give a info about everything that happens beetwen this neck and what to drink some kind of drink while working on the laptop. In this objection we talk about the cleaning some kind of spotts that located near lakes or ozers. I dont give a info about everything that happens beetwen this neck and what to drink some kind of drink while working on the laptop. </h3>
-              </div>
-              <div className="materials-img">
-                <img
-                  src={require(`../img/UsedMaterials1.png`)}
-                  alt="The young nigga"
-                  className="image"
-                />
-              </div>
+                <h2>Objection #1 Cleaning the Spot</h2>
+                <div className="materials-main">
+                <div className="materials-info">
+                    <div className="materials-text">
+                    <h3>In this objection we talk about the cleaning some kind of spotts that located near lakes or ozers. I dont give a info about everything that happens beetwen this neck and what to drink some kind of drink while working on the laptop. In this objection we talk about the cleaning some kind of spotts that located near lakes or ozers. I dont give a info about everything that happens beetwen this neck and what to drink some kind of drink while working on the laptop. </h3>
+                    <a>Writed by: Majatma Gandi</a>
+                    </div>
+                    <div className="materials-img">
+                      <img
+                        src={require(`../img/UsedMaterials1.png`)}
+                        alt="The young nigga"
+                        className="image"
+                      />
+                    </div>
+                </div>
+            </div>
             </div>
           </div>
         </>
