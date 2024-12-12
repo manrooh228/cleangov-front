@@ -3,5 +3,25 @@
         "map" : "КАРТА",
         "investigations" : "РАССЛЕДОВАНИЯ",
         "tutorial" : "ОБУЧЕНИЕ"
+    },
+    "tutorial" : {
+        "start-tutorial" : "Start Tutorial",
+        "info-tutorial": "In this tutorial, you will learn how the interface works, figure out what affects it and how. And get some tips that will definitely help you when completing the game course",
+        "additional": "Additional Information"
+    },
+    "buttons" : {
+        "start" : "START",
+        "progress" : "Progress",
+        "is_completed" : "Comleted?",
+        "comleted" : "COMPLETED"
+    },
+    "investigation-list" : {
+        "city-one" : "CITY I: Corruption",
+        "list": "Investigations list",
+        "video-mat" : "Video materials", 
+        "achivements" : "Achievements",
+        "inv" : "Investigation",
+        "level" : "Level",
+        "about-inv" : "About Investigation"
     }
 }

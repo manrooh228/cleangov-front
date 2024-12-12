@@ -5,6 +5,7 @@ import { useUser } from "../../api/context/UserProfile";
 // import LeftInvestigationsPanel from './LeftInvestigationsPanel';
 import RightMenu from "./RightMenu";
 import Profile from "./Profile";
+import { useTranslation } from "react-i18next";
 
 const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -22,6 +23,7 @@ const useIsMobile = () => {
   };
 
 const Header = () => {
+    const { t } = useTranslation();
     const { user } = useUser();
     const isMobile = useIsMobile();
     const navigate = useNavigate();
@@ -92,9 +94,9 @@ const Header = () => {
                     </div>
                 ) : (
                     <div className="menu">
-                        <h1 onClick={handleMapClick}>CITY MAP</h1>
-                        <h1 onClick={handleInvestigClick}>INVESTIGATION</h1>
-                        <h1 onClick={handleTutorialClick}>TUTORIAL</h1>
+                        <h1 onClick={handleMapClick}>{t('header.map')}</h1>
+                        <h1 onClick={handleInvestigClick}>{t('header.investigations')}</h1>
+                        <h1 onClick={handleTutorialClick}>{t('header.tutorial')}</h1>
                     </div>
                 )}
                 <div>

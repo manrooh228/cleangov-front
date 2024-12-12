@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Header from "../Header";
 import "../../css/Tutorial/TutorialMain.css"
+import { useTranslation } from "react-i18next";
 
 const useIsMobile = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -18,6 +19,7 @@ const useIsMobile = () => {
   };
 
 const TutorialMain = () => {
+    const { t } = useTranslation();
     const isMobile = useIsMobile();
 
     return (
@@ -26,17 +28,17 @@ const TutorialMain = () => {
             <div className="tutorial-main-page">
                 <div className="tutorial-panel">
                     <div className="panel-name">
-                        <h2>Start Tutorial</h2>
+                        <h2>{t('tutorial.start-tutorial')}</h2>
                     </div>
                     <div className="description-panel">
                         <div className="panel-title">
-                            <h5>Start Tutorial</h5>
+                            <h5>{t('tutorial.start-tutorial')}</h5>
                         </div>
                         <div className="panel-info">
-                            <h5>In this tutorial, you will learn how the interface works, figure out what affects it and how. And get some tips that will definitely help you when completing the game course</h5>    
+                            <h5>{t('tutorial.info-tutorial')}</h5>    
                         </div>
                     </div>
-                    <button className="inv-start"><p>START</p></button>
+                    <button className="inv-start"><p>{t('buttons.start')}</p></button>
                 </div>
                 {isMobile ? (
                     <div className="mobile-panel">

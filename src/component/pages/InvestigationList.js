@@ -4,8 +4,10 @@ import Header from "./Header";
 import { getInvestigationsWithProgress } from "../../api/InvestigationsService";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../api/context/UserProfile.js";
+import { useTranslation } from "react-i18next";
 
 const InvestigationList = () => {
+    const { t } = useTranslation();
     const { user } = useUser();
     const [availableInvestigations, setAvailableInvestigations] = useState([]);
 
@@ -72,33 +74,33 @@ const InvestigationList = () => {
         <div className="investigations-page">
             <div className="main-container">
                 <div className="title-container">
-                    <h1>CITY I: Corruption</h1>
+                    <h1>{t("investigation-list.city-one")}</h1>
                     <div className="menu">
-                        <button className="menu-inv-list" onClick={handleInvestListClick}><p>Investigations list</p></button>
-                        <button className="menu-vid-mat"><p>Video materials</p></button>
-                        <button className="menu-achiv"><p>Achievements</p></button>
+                        <button className="menu-inv-list" onClick={handleInvestListClick}><p>{t("investigation-list.list")}</p></button>
+                        <button className="menu-vid-mat"><p>{t("investigation-list.video-mat")}</p></button>
+                        <button className="menu-achiv"><p>{t("investigation-list.achivements")}</p></button>
                     </div>
                 </div>
                 <div className='investigations-list'>
                     {availableInvestigations.map((invest, index) => (
                         <div key={index} className="row">
                             <div className="investigation-name">
-                                <h3>Investigation #{invest.investigation.id}</h3>
+                                <h3>{t("investigation-list.inv")} #{invest.investigation.id}</h3>
                                 <h3>{invest.investigation.name}</h3>  
                             </div>
                             <div className={`investigation-level ${invest.investigation.level}`}>
-                                    <h5>Level: {invest.investigation.level}</h5>
+                                    <h5>{t("investigation-list.level")}: {invest.investigation.level}</h5>
                             </div>
                             <div className="investigation-info-panel">
                                 <div className="panel-title">
-                                    <h5>About Investigation</h5>
+                                    <h5>{t("investigation-list.about-inv")}</h5>
                                 </div>
                                 <div className="panel-info">
                                     <h5>{invest.investigation.description}</h5>
                                 </div>
                             </div>
                             <div className="investigation-progress-panel">
-                                    <h4>Progress</h4>
+                                    <h4>{t('buttons.progress')}</h4>
                                     {(!invest.progress) ? (
                                         <h3>0/100</h3>
                                     ) : (
@@ -107,9 +109,9 @@ const InvestigationList = () => {
                             </div>
                                 {(invest.progress !== 100) ? (
                                     <button className="inv-start" 
-                                    onClick={() => handleStartClick(invest.investigation.id)}><p>START</p></button>
+                                    onClick={() => handleStartClick(invest.investigation.id)}><p>{t('buttons.start')}</p></button>
                                 ) : (
-                                    <button className="inv-start"><p>COMPLETED</p></button>
+                                    <button className="inv-start"><p>{t('buttons.completed')}</p></button>
                                 )} 
                         </div>
                     ))}
