@@ -7,7 +7,7 @@ i18n
   .use(HttpApi)
   .use(initReactI18next) // Инициализация i18n для React
   .init({
-    lng: "ru",
+    lng: "en",
     supportedLngs: ['en', 'ru', 'kz'], // Поддерживаемые языки
     nonExplicitWhitelist: true,
     allbackLng: 'ru', 

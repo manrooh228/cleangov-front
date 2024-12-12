@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import '../css/MapPage.css'
 import LeftInvestigationsPanel from './LeftInvestigationsPanel';
 import { useNavigate } from "react-router-dom";
-import RightMenu from "./RightMenu";
+// import RightMenu from "./RightMenu";
 import Profile from "./Profile";
 import { useUser } from "../../api/context/UserProfile";
 import { useTranslation } from "react-i18next";
+import RightMenu from "./RightMenu";
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -30,6 +31,12 @@ const MapPage = () => {
   const [showLeftPanel, setShowLeftPanel] = useState(true);
   const [showRightPanel, setShowRightPanel] = useState(false);
   const [showProfilePanel, setShowProfilePanel] = useState(false);
+  const [showMaterials, setShowMaterials] = useState(true);
+
+  const toggleMaterials = () => {
+    console.log("handleMaterials called");
+    setShowMaterials((prev) => !prev);
+  };
 
   const markers = [
     { id: 1, x: "35%", y: "30%" },
@@ -110,7 +117,9 @@ const MapPage = () => {
 
     {showLeftPanel && (<LeftInvestigationsPanel />)}
     
-    {showRightPanel && (<RightMenu />)}
+    {showRightPanel && (
+        <RightMenu showMaterials={showMaterials} toggleMaterials={toggleMaterials} />
+      )}
 
     {showProfilePanel && (<Profile />)}
 
@@ -136,3 +145,4 @@ const MapPage = () => {
 };
 
 export default MapPage;
+
