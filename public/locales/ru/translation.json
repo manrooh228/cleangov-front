@@ -5,49 +5,49 @@
         "tutorial" : "Обучение"
     },
     "tutorial" : {
-        "start-tutorial" : "Start Tutorial",
-        "info-tutorial": "In this tutorial, you will learn how the interface works, figure out what affects it and how. And get some tips that will definitely help you when completing the game course",
-        "additional": "Additional Information"
+        "start-tutorial" : "Начать Туториал",
+        "info-tutorial": "В этом туториале вы узнаете, как работает интерфейс, разберетесь, что и как на него влияет. И получите несколько советов, которые обязательно помогут вам при прохождении игрового курса.",
+        "additional": "Дополнительная Информация"
     },
     "buttons" : {
-        "start" : "START",
-        "progress" : "Progress",
-        "is_completed" : "Comleted?",
-        "comleted" : "COMPLETED",
-        "score" : "Your Score"
+        "start" : "НАЧАТЬ",
+        "progress" : "Прогресс",
+        "is_completed" : "Выполнено?",
+        "comleted" : "ВЫПОЛНЕНО",
+        "score" : "Ваш Счет"
     },
     "investigation-list" : {
-        "city-one" : "CITY I: Corruption",
-        "list": "Investigations list",
-        "video-mat" : "Video materials", 
-        "achivements" : "Achievements",
-        "inv" : "Investigation",
-        "level" : "Level",
-        "about-inv" : "About Investigation"
+        "city-one" : "Город - 1: Коррупция",
+        "list": "Список Расследований",
+        "video-mat" : "Видео-уроки", 
+        "achivements" : "Достижения",
+        "inv" : "Расследование",
+        "level" : "Уровень",
+        "about-inv" : "О Расследовании"
     },
     "tasks" : {
-        "task-inv" : "Tasks for Investigation",
-        "task" : "Task",
-        "video" : "Theoretical Video",
-        "test" : "A test for verification knowledge",
-        "refl" : "Reflections on this investigation"
+        "task-inv" : "Задачи для Расследования",
+        "task" : "Задание",
+        "video" : "Теоретическое видео",
+        "test" : "Тест для Подтверждения Знаний",
+        "refl" : "Размышления об этом расследовании"
     },
     "left-panel" : {
-        "avail" : "Available investigations",
-        "no-avail" : "No available investigations",
-        "ong" : "Ongoing tasks",
-        "no-ong" : "No ongoing task"
+        "avail" : "Доступные Расследования",
+        "no-avail" : "Нет Доступных Расследований",
+        "ong" : "Активные Задачи",
+        "no-ong" : "Нет Активных Задач"
     },
     "profile" : {
-        "edit" : "Edit Profile",
-        "req" : "Request for Transcript",
-        "log-out" : "Log Out"
+        "edit" : "Редактировать Профиль",
+        "req" : "Заявка в Транскрипт",
+        "log-out" : "Выйти"
     },
     "menu" : {
-        "sel" : "Select a City",
-        "pre" : "Preferences",
-        "rep" : "Write a Report",
-        "use" : "Used Materials",
-        "about" : "About Us"
+        "sel" : "Выбрать Город",
+        "pre" : "Настройки",
+        "rep" : "Подать Жалобу",
+        "use" : "Использованные Материалы",
+        "about" : "О нас"
     }
 }
