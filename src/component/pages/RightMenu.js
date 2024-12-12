@@ -1,10 +1,12 @@
 import React from "react";
 import "../css/RightMenu.css"
+import { useTranslation } from "react-i18next";
+import { useUser } from "../../api/context/UserProfile";
 
 const RightMenu = () => {
-
-
-
+    const { user } = useUser();
+    const {t} = useTranslation();
+    console.log(user);
     return (
         <>
         <div className="right-menu-main">
@@ -12,19 +14,19 @@ const RightMenu = () => {
               <h1>CleanGOV</h1>
             </div>
             <div className="right-menu-panel">
-                <h2>Select a City (In Work)</h2>
+                <h2>{t("menu.sel")}</h2>
             </div>
             <div className="right-menu-panel1">
-                <h2>Preferences</h2>
+                <h2>{t("menu.pre")}</h2>
             </div>
             <div className="right-menu-panel">
-                <h2>Write a Report</h2>
+                <h2>{t("menu.rep")}</h2>
             </div>
             <div className="right-menu-panel">
-                <h2>Used Materials</h2>
+                <h2>{t("menu.use")}</h2>
             </div>  
             <div className="right-menu-panel">
-                <h2>About Us</h2>
+                <h2>{t("menu.about")}</h2>
             </div>
         </div>
         </>
