@@ -31,7 +31,7 @@ const MapPage = () => {
   const [showLeftPanel, setShowLeftPanel] = useState(true);
   const [showRightPanel, setShowRightPanel] = useState(false);
   const [showProfilePanel, setShowProfilePanel] = useState(false);
-  const [showMaterials, setShowMaterials] = useState(true);
+  const [showMaterials, setShowMaterials] = useState(false);
 
   const toggleMaterials = () => {
     console.log("handleMaterials called");
