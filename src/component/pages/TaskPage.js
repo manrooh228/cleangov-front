@@ -63,6 +63,19 @@ const TaskPage = () => {
     };
 
 
+    const handleUpdateProgress1 = async (taskId) => {
+        try {
+            const progress = {
+                userId: user.id,
+                taskId: taskId,
+                progress: 100, // Задача выполнена
+            };
+            await axios.post(`${API_BASE_URL}/progress/update`, progress);
+            navigate('/video');
+        } catch (error) {
+            console.error("Error updating progress:", error);
+        }
+    };
     const handleUpdateProgress = async (taskId) => {
         try {
             const progress = {
@@ -120,7 +133,7 @@ const TaskPage = () => {
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start" onClick={() => handleUpdateProgress(task.id)}><p>START</p></button>//сюда
+                                    <button className="inv-start" onClick={() => handleUpdateProgress1(task.id)}><p>START</p></button>//сюда
                                 )}
                             </div>
                         ) :

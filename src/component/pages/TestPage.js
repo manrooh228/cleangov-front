@@ -53,50 +53,58 @@ const TestPage = () => {
         }));
     };
 
-const handleSubmit = async () => {
-    let correctAnswers = 0;
-
-    const unansweredQuestions = questions.filter(
-        question => !answers.hasOwnProperty(question.id)
-    );
-    if (unansweredQuestions.length > 0) {
-        alert("Пожалуйста, ответьте на все вопросы перед отправкой.");
-        return;
-    }
-
-    questions.forEach(question => {
-        const correctAnswer = question.answers.find(answer => answer.correct);
-        if (correctAnswer && answers[question.id] === correctAnswer.id) {
-            correctAnswers += 1;
+    const handleSubmit = async () => {
+        let correctAnswers = 0;
+        
+        const unansweredQuestions = questions.filter(
+            question => !answers.hasOwnProperty(question.id)
+        );
+        if (unansweredQuestions.length > 0) {
+            alert("Пожалуйста, ответьте на все вопросы перед отправкой.");
+            return;
         }
-    });
 
-    const totalQuestions = questions.length;
-    const percentage = Math.round((correctAnswers / totalQuestions) * 100);
-    setScore(percentage);
-
-    try {
-        const result = {
-            test: { id: testId }, // Отправляем ID теста
-            user: { id: userId }, // Отправляем ID пользователя
-            successPercentage: percentage,
-        };
-
-        await axios.post(`${API_BASE_URL}/tests/save-result`, result); // Отправка объекта
-
-        const progress = {
-            userId,
-            taskId, 
-            progress: 100,
-        };
-
-
-        await axios.post(`${API_BASE_URL}/progress/update`, progress); // Обновляем прогресс
-        setIsSubmitted(true);
-    } catch (error) {
-        console.error("Error submitting test result:", error);
-    }
-};
+        questions.forEach(question => {
+            const correctAnswer = question.answers.find(answer => answer.correct);
+            if (correctAnswer && answers[question.id] === correctAnswer.id) {
+                correctAnswers += 1;
+            }
+        });
+    
+        const totalQuestions = questions.length;
+        const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+        setScore(percentage);
+    
+        try {
+            const result = {
+                test: { id: testId },
+                user: { id: userId },
+                successPercentage: percentage,
+            };
+    
+            await axios.post(`${API_BASE_URL}/tests/save-result`, result);
+    
+            if (percentage === 100) {
+                // Проверка на ачивку
+                await axios.post(`${API_BASE_URL}/achievements/check`, {
+                    userId,
+                    achievementName: "The young geek",
+                });
+            }
+    
+            const progress = {
+                userId,
+                taskId, 
+                progress: 100,
+            };
+    
+            await axios.post(`${API_BASE_URL}/progress/update`, progress);
+            setIsSubmitted(true);
+        } catch (error) {
+            console.error("Error submitting test result:", error);
+        }
+    };
+    
 
         
 
