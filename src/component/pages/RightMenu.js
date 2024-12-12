@@ -1,17 +1,31 @@
-    import React, { useState } from "react";
+import React, { useState } from "react";
 import "../css/RightMenu.css"
 import { useTranslation } from "react-i18next";
 import { useUser } from "../../api/context/UserProfile";
-import "../css/Materials.css"
+import "../css/Materials.css";
+import "../css/Preferences.css";
 
 
 const RightMenu = () => {
     const { user } = useUser();
     const [showMat, setShowMat] = useState(false);
-    const {t} = useTranslation();
+    const {t, i18n} = useTranslation();
+    const [showPreferences, setShowPreferences] = useState(false);
+    const [showLanguage, setshowLanguage] = useState(false);
 
+    const currentLanguage = i18n.language;
+
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
     const handleMatClick = () => {
         setShowMat((prev) => !prev);
+    }
+    const handleLangClick = () => {
+        setshowLanguage((prev) => !prev);
+    }
+    const handlePreferencesClick = () => {
+        setShowPreferences((prev) => !prev);
     }
     
     return (
@@ -23,8 +37,80 @@ const RightMenu = () => {
       <div className="right-menu-panel">
           <h2>{t("menu.sel")}</h2>
       </div>
-      <div className="right-menu-panel1">
+      <div className="right-menu-panel1"
+      onMouseEnter={handlePreferencesClick}
+      onMouseLeave={handlePreferencesClick}>
           <h2>{t("menu.pre")}</h2>
+            {showPreferences && (
+                <div className="preference-panel-language">
+                    <div className="preference-name-language">
+                        <h2>Language</h2>
+                    </div>
+                    <div className="preference-language">
+                        <div className="pref-panel">
+                            {currentLanguage === 'en' ? (
+                            <>
+                                <button onMouseEnter={handleLangClick}
+                                        onMouseLeave={handleLangClick}
+                                        onClick={changeLanguage('en')}>
+                                    <p>EN</p>
+                                </button>
+                                {showLanguage && (
+                                    <>
+                                    <button>
+                                        <p>KZ</p>
+                                    </button>
+                                    <button>
+                                        <p>RU</p>
+                                    </button> 
+                                    </>
+                                )}
+                                
+                            </>
+                            ) :
+                            currentLanguage === 'kz' ? (
+                                <>
+                                    <button onMouseEnter={handleLangClick}
+                                            onMouseLeave={handleLangClick}>
+                                    <p>KZ</p>
+                                    </button>
+                                    {showLanguage && (
+                                        <>
+                                        <button>
+                                            <p>EN</p>
+                                        </button>
+                                        <button>
+                                            <p>RU</p>
+                                        </button> 
+                                        </>
+                                    )}
+                                </>
+                            ) : 
+                            currentLanguage === 'ru' ? (
+                                <>
+                                    <button onMouseEnter={handleLangClick}
+                                            onMouseLeave={handleLangClick}>
+                                    <p>RU</p>
+                                    </button>
+                                    {showLanguage && (
+                                        <>
+                                        <button>
+                                            <p>EN</p>
+                                        </button>
+                                        <button>
+                                            <p>KZ</p>
+                                        </button> 
+                                        </>
+                                    )}
+                                </>
+                            ) : (
+                                <>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
       </div>
       <div className="right-menu-panel">
           <h2>{t("menu.rep")}</h2>

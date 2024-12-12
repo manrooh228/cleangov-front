@@ -10,7 +10,7 @@ i18n
     lng: "en",
     supportedLngs: ['en', 'ru', 'kz'], // Поддерживаемые языки
     nonExplicitWhitelist: true,
-    allbackLng: 'ru', 
+    allbackLng: 'en', 
     backend: {
       loadPath: 'locales/{{lng}}/translation.json', // Путь к файлам перевода
     },

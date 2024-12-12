@@ -1,0 +1,23 @@
+.preference-panel-language {
+    display: flex;
+    flex-direction: row;
+    gap: 7vw;
+    padding-top: 2vh;
+}
+
+.preference-panel-language .preference-language .pref-panel {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-width: 4vw;
+    min-height: 2vh;
+    padding: 15%;
+    border-radius: 20px ;
+    box-shadow: 0px 0px 20px #1D587A;
+}
+
+.preference-panel-language .preference-language .pref-panel button{
+    border-radius: 5px;
+    box-shadow: 0px 0px 30px #1D587A;
+    margin-bottom: 1vh;
+}
