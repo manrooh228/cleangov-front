@@ -13,7 +13,8 @@
         "start" : "START",
         "progress" : "Progress",
         "is_completed" : "Comleted?",
-        "comleted" : "COMPLETED"
+        "comleted" : "COMPLETED",
+        "score" : "Your Score"
     },
     "investigation-list" : {
         "city-one" : "CITY I: Corruption",
@@ -23,5 +24,30 @@
         "inv" : "Investigation",
         "level" : "Level",
         "about-inv" : "About Investigation"
+    },
+    "tasks" : {
+        "task-inv" : "Tasks for Investigation",
+        "task" : "Task",
+        "video" : "Theoretical Video",
+        "test" : "A test for verification knowledge",
+        "refl" : "Reflections on this investigation"
+    },
+    "left-panel" : {
+        "avail" : "Available investigations",
+        "no-avail" : "No available investigations",
+        "ong" : "Ongoing tasks",
+        "no-ong" : "No ongoing task"
+    },
+    "profile" : {
+        "edit" : "Edit Profile",
+        "req" : "Request for Transcript",
+        "log-out" : "Log Out"
+    },
+    "menu" : {
+        "sel" : "Select a City",
+        "pre" : "Preferences",
+        "rep" : "Write a Report",
+        "use" : "Used Materials",
+        "about" : "About Us"
     }
 }

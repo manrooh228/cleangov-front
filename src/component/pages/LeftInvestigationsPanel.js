@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getAvailableInvestigations, getTasksWithProgress } from "../../api/InvestigationsService";
 import "../css/LeftInvestigationsPanel.css";
 import { useUser } from "../../api/context/UserProfile";
+import { useTranslation } from "react-i18next";
 
 const LeftInvestigationsPanel = () => {
+    const { t } = useTranslation();
     const { user } = useUser(); // Получаем данные пользователя из контекста
     const [availableInvestigations, setAvailableInvestigations] = useState([]);
     const [ongoingTasks, setOngoingTasks] = useState([]);
@@ -12,7 +14,6 @@ const LeftInvestigationsPanel = () => {
 
     useEffect(() => {
         if (!user || !user.id) {
-            console.warn("User ID is null or undefined. Investigations cannot be loaded.");
             return;
         }
 
@@ -51,7 +52,7 @@ const LeftInvestigationsPanel = () => {
                         onMouseEnter={() => setShowAvailable(true)}
                         onMouseLeave={() => setShowAvailable(false)}
                     >
-                        <h3>Available investigations</h3>
+                        <h3>{t("left-panel.avail")}</h3>
                         {showAvailable && (
                             <ul>
                                 {availableInvestigations.length > 0 ? (
@@ -59,7 +60,7 @@ const LeftInvestigationsPanel = () => {
                                         <li key={investigation.id}>{investigation.name}</li>
                                     ))
                                 ) : (
-                                    <li>No available investigations</li>
+                                    <li>{t("left-panel.no-avail")}</li>
                                 )}
                             </ul>
                         )}
@@ -69,7 +70,7 @@ const LeftInvestigationsPanel = () => {
                         onMouseEnter={() => setShowOngoing(true)}
                         onMouseLeave={() => setShowOngoing(false)}
                     >
-                        <h3>Ongoing tasks</h3>
+                        <h3>{t("left-panel.ong")}</h3>
                         {showOngoing && (
                             <ul>
                                 {ongoingTasks.length > 0 ? (
@@ -77,7 +78,7 @@ const LeftInvestigationsPanel = () => {
                                         <li key={task.id}>{task.name}</li>
                                     ))
                                 ) : (
-                                    <li>No ongoing task</li>
+                                    <li>{t("left-panel.no-ong")}</li>
                                 )}
                             </ul>
                         )}

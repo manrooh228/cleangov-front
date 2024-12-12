@@ -1,9 +1,11 @@
 import React from "react";
 import "../css/Profile.css"
 import { useUser } from "../../api/context/UserProfile";
+import { useTranslation } from "react-i18next";
 
 const Profile = () => {
     const { user } = useUser();
+    const {t} = useTranslation();
     console.log(user);
     return (
         <>
@@ -19,16 +21,16 @@ const Profile = () => {
                     <h5>user.id</h5> */}
                 </div>
                 <div className="profile-button">
-                    <h2>Achievements</h2>
+                    <h2>{t("investigation-list.achivements")}</h2>
                 </div>
                 <div className="profile-button">
-                    <h2>Edit Profile</h2>
+                    <h2>{t("profile.edit")}</h2>
                 </div>
                 <div className="profile-button">
-                    <h2>Request for Transcript</h2>
+                    <h2>{t("profile.req")}</h2>
                 </div>
                 <div className="profile-button">
-                    <h2>Log Out</h2>
+                    <h2>{t("profile.log-out")}</h2>
                 </div>
             </div>
         {/* ) : (

@@ -7,9 +7,11 @@ import { useUser } from "../../api/context/UserProfile.js";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { API_BASE_URL } from "../../api/API_BASE_URL.js";
+import { useTranslation } from "react-i18next";
 
 const TaskPage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const { user } = useUser();
     const { investigationId } = useParams();
     const [tasks, setTasks] = useState([]);
@@ -97,7 +99,7 @@ const TaskPage = () => {
             <Header />
             <div className="tasks-page">
                 <div className="tasks-page-title">
-                <h1>Tasks for Investigation #{investigationId}</h1>
+                <h1>{t("tasks.task-inv")} #{investigationId}</h1>
                 </div>
                 <div className="tasks-list">
                     {tasks.map((task, index) => (
@@ -109,12 +111,12 @@ const TaskPage = () => {
 
                             <div className="video-main-panel">
                                 <div className="video-main-title">
-                                    <h2>Task One</h2>
+                                    <h2>{t("tasks.task")} One</h2>
                                     <h2>{task.name}</h2>
                                 </div> 
                                 <div className="video-description-panel">
                                     <div className="panel-title">
-                                        <h4>Theoretical video</h4>
+                                        <h4>{t("tasks.video")}</h4>
                                     </div>
                                     <div className="panel-info">
                                         <h4>{task.description}</h4>
@@ -122,7 +124,7 @@ const TaskPage = () => {
                                 </div>
                                 <div className="video-completed-panel">
                                     <div className="panel-title">
-                                        <h4>Completed?</h4>    
+                                        <h4>{t("buttons.is_completed")}</h4>    
                                     </div>
                                     <div className="checkbox">
                                     {task.progress === 100 ? (
@@ -133,19 +135,19 @@ const TaskPage = () => {
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start" onClick={() => handleUpdateProgress1(task.id)}><p>START</p></button>//сюда
+                                    <button className="inv-start" onClick={() => handleUpdateProgress1(task.id)}><p>{t('buttons.start')}</p></button>//сюда
                                 )}
                             </div>
                         ) :
                         task.taskType === 'test' ? (
                             <div className="video-main-panel">
                                 <div className="video-main-title">
-                                    <h2>Task Two</h2>
+                                    <h2>{t("tasks.task")} Two</h2>
                                     <h2>{task.name}</h2>
                                 </div> 
                                 <div className="video-description-panel">
                                     <div className="panel-title">
-                                        <h4>A test for verification knowledge</h4>
+                                        <h4>{t("tasks.test")}</h4>
                                     </div>
                                     <div className="panel-info">
                                         <h4>{task.description}</h4>
@@ -153,7 +155,7 @@ const TaskPage = () => {
                                 </div>
                                 <div className="video-completed-panel">
                                     <div className="panel-title">
-                                        <h4>Completed?</h4>    
+                                        <h4>{t("buttons.is_completed")}</h4>    
                                     </div>
                                     <div className="checkbox">
                                     {task.progress === 100 ? (
@@ -165,14 +167,14 @@ const TaskPage = () => {
                                 </div>
                                 <div className="result-panel">
                                     <div className="panel-title">
-                                        <h4>Your score</h4>    
+                                        <h4>{t("buttons.score")}</h4>    
                                     </div>
                                     <div className="result">
                                         <h4>100/100</h4> {/* vremenno */}
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start" onClick={() => handleStartTest(task.id)}><p>START</p></button> //при нажатии начать тест
+                                    <button className="inv-start" onClick={() => handleStartTest(task.id)}><p>{t('buttons.start')}</p></button> //при нажатии начать тест
                                 )}
                             </div>
 
@@ -180,19 +182,19 @@ const TaskPage = () => {
                         task.taskType === 'reflexio' ? (
                             <div className="video-main-panel">
                                 <div className="video-main-title">
-                                    <h2>Task three</h2>
+                                    <h2>{t("tasks.task")} three</h2>
                                     <h2>{task.name}</h2>
                                 </div> 
                                 <div className="video-description-panel">
                                     <div className="panel-title">
-                                        <h4>Reflections on this investigation</h4>
+                                        <h4>{t("tasks.refl")}</h4>
                                     </div>
                                     <div className="panel-info">
                                         <h4>{task.description}</h4>
                                     </div>
                                 </div>
                                 {task.progress !== 100 && (
-                                    <button className="inv-start" onClick={() => handleUpdateProgress(task.id)}><p>START</p></button>
+                                    <button className="inv-start" onClick={() => handleUpdateProgress(task.id)}><p>{t('buttons.start')}</p></button>
                                 )}
                             </div>
                         ) : (
