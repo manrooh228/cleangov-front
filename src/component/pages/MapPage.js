@@ -36,7 +36,7 @@ const MapPage = () => {
   const toggleMaterials = () => {
     console.log("handleMaterials called");
     setShowMaterials((prev) => !prev);
-  };
+  };  
 
   const markers = [
     { id: 1, x: "35%", y: "30%" },

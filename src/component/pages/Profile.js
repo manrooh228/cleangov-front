@@ -20,7 +20,7 @@ const Profile = () => {
                     {/* <h4>user.username</h4>
                     <h5>user.id</h5> */}
                 </div>
-                <div className="profile-button">
+                <div className="profile-button" onClick={handleAchievemntClick}>
                     <h2>{t("investigation-list.achivements")}</h2>
                 </div>
                 <div className="profile-button">
