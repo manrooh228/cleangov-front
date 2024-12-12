@@ -1,12 +1,18 @@
 import React from "react";
 import "../css/Profile.css"
+import "../css/Achievement.css"
 import { useUser } from "../../api/context/UserProfile";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 const Profile = () => {
     const { user } = useUser();
+    const [showAchievements, setShowAchievements] = useState(false);
     const {t} = useTranslation();
-    console.log(user);
+
+    const handleAchievemntClick = () => {
+        setShowAchievements((prev) => !prev);
+    }
     return (
         <>
         {/* {user ? ( */}
@@ -33,9 +39,18 @@ const Profile = () => {
                     <h2>{t("profile.log-out")}</h2>
                 </div>
             </div>
-        {/* ) : (
-                <h1></h1>
-            )} */}
+
+            {showAchievements && (
+                <div className="achieves-main-panel">
+                    <div className="achieves-title-panel">
+                        <h1>Achivements</h1>
+                        <h1 onClick={handleAchievemntClick}>x</h1>
+                    </div>
+                    <div className="achieves-list">
+                        
+                    </div>
+                </div>
+            )}
             
         </>
     )
