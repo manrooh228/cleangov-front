@@ -3,19 +3,45 @@
     top: 10vh;
     right: 1vw;
     z-index: 50;
-    width: 30vw;
+    width: 35vw;
     padding-left: 2%;
     padding-top: 1.5%;
-    height: 50vh;
-    min-height: 28.2vw;
+    min-height: 25.2vw;
     background: #fff;
     border-radius: 20px ;
     box-shadow: 0px 0px 30px #1D587A;
 }
 
+.achieves-main-panel h1 {
+    color: #1D587A;
+}
 
 .achieves-main-panel .achieves-title-panel {
     display: flex;
     flex-direction: row;
-    gap: 13vw;
+    gap: 18vw;
 }
+.achieves-main-panel .achieves-list {
+    padding-left: 2%;
+    padding-top: 10%;
+    gap: 20%;
+    display: flex;
+    flex-direction: row;
+}
+
+.achieves-main-panel .achieves-list .achivement-item {
+    padding: 4%;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.achieves-main-panel .achieves-list .achivement-item h4 {
+    padding-top: 10%;
+    color: #1D587A;
+}
+img {
+    margin: auto;
+    width: 8vw; /* Ширина картинки */
+    height: auto; /* Высота будет пропорциональной */
+  }
