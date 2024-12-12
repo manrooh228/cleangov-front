@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import "../css/RightMenu.css"
 import { useTranslation } from "react-i18next";
 import { useUser } from "../../api/context/UserProfile";
-
 import "../css/Materials.css"
 
-const RightMenu = ({ showMaterials, toggleMaterials }) => {
-    console.log("RightMenu rendered");
 
-const RightMenu = () => {
+const RightMenu = ({ showMaterials, toggleMaterials }) => {
     const { user } = useUser();
     const {t} = useTranslation();
     console.log(user);
