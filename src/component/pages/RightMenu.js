@@ -5,10 +5,14 @@ import { useUser } from "../../api/context/UserProfile";
 import "../css/Materials.css"
 
 
-const RightMenu = ({ showMaterials, toggleMaterials }) => {
+const RightMenu = () => {
     const { user } = useUser();
+    const [showMat, setShowMat] = useState(false);
     const {t} = useTranslation();
-    console.log(user);
+
+    const handleMatClick = () => {
+        setShowMat((prev) => !prev);
+    }
     
     return (
       <>
@@ -25,7 +29,7 @@ const RightMenu = ({ showMaterials, toggleMaterials }) => {
       <div className="right-menu-panel">
           <h2>{t("menu.rep")}</h2>
       </div>
-      <div className="right-menu-panel" onClick={toggleMaterials}>
+      <div className="right-menu-panel" onClick={handleMatClick}>
           <h2>{t("menu.use")}</h2>
       </div>  
       <div className="right-menu-panel">
@@ -33,7 +37,7 @@ const RightMenu = ({ showMaterials, toggleMaterials }) => {
       </div>
   </div>
   
-    {showMaterials && (
+    {showMat && (
     <div key="materials" className="materials-main-panel">
         <h1>Materials</h1>
     </div>

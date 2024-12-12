@@ -31,12 +31,6 @@ const MapPage = () => {
   const [showLeftPanel, setShowLeftPanel] = useState(true);
   const [showRightPanel, setShowRightPanel] = useState(false);
   const [showProfilePanel, setShowProfilePanel] = useState(false);
-  const [showMaterials, setShowMaterials] = useState(false);
-
-  const toggleMaterials = () => {
-    console.log("handleMaterials called");
-    setShowMaterials((prev) => !prev);
-  };  
 
   const markers = [
     { id: 1, x: "35%", y: "30%" },
@@ -118,7 +112,7 @@ const MapPage = () => {
     {showLeftPanel && (<LeftInvestigationsPanel />)}
     
     {showRightPanel && (
-        <RightMenu showMaterials={showMaterials} toggleMaterials={toggleMaterials} />
+        <RightMenu />
       )}
 
     {showProfilePanel && (<Profile />)}
