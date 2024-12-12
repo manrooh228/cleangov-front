@@ -17,7 +17,7 @@ const RightMenu = () => {
     const currentLanguage = i18n.language;
 
     const changeLanguage = (lng) => {
-      // i18n.changeLanguage(lng);
+      i18n.changeLanguage(lng);
     };
   const handleMatClick = () => {
     setShowMat((prev) => !prev);
@@ -51,20 +51,19 @@ const RightMenu = () => {
                         <h2>Language</h2>
                     </div>
                     <div className="preference-language">
-                        <div className="pref-panel">
+                        <div className="pref-panel"  onMouseEnter={handleLangClick}
+                                        onMouseLeave={handleLangClick}>
                             {currentLanguage === 'en' ? (
                             <>
-                                <button onMouseEnter={handleLangClick}
-                                        onMouseLeave={handleLangClick}
-                                        onClick={changeLanguage('en')}>
+                                <button onClick={() => changeLanguage('en')}>
                                     <p>EN</p>
                                 </button>
                                 {showLanguage && (
                                     <>
-                                    <button>
+                                    <button onClick={() => changeLanguage('kz')}>
                                         <p>KZ</p>
                                     </button>
-                                    <button>
+                                    <button onClick={() => changeLanguage('ru')}>
                                         <p>RU</p>
                                     </button> 
                                     </>
@@ -74,16 +73,15 @@ const RightMenu = () => {
                             ) :
                             currentLanguage === 'kz' ? (
                                 <>
-                                    <button onMouseEnter={handleLangClick}
-                                            onMouseLeave={handleLangClick}>
+                                    <button onClick={() => changeLanguage('kz')}>
                                     <p>KZ</p>
                                     </button>
                                     {showLanguage && (
                                         <>
-                                        <button>
+                                        <button onClick={() => changeLanguage('en')}>
                                             <p>EN</p>
                                         </button>
-                                        <button>
+                                        <button onClick={() => changeLanguage('ru')}>
                                             <p>RU</p>
                                         </button> 
                                         </>
@@ -92,16 +90,15 @@ const RightMenu = () => {
                             ) : 
                             currentLanguage === 'ru' ? (
                                 <>
-                                    <button onMouseEnter={handleLangClick}
-                                            onMouseLeave={handleLangClick}>
+                                    <button onClick={() => changeLanguage('ru')}>
                                     <p>RU</p>
                                     </button>
                                     {showLanguage && (
                                         <>
-                                        <button>
+                                        <button onClick={() => changeLanguage('en')}>
                                             <p>EN</p>
                                         </button>
-                                        <button>
+                                        <button onClick={() => changeLanguage('kz')}>
                                             <p>KZ</p>
                                         </button> 
                                         </>
