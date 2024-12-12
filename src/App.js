@@ -10,6 +10,7 @@ import TutorialMain from './component/pages/Tutorial/TutorialMain.js';
 import TaskPage from './component/pages/TaskPage.js';
 import TestPage from './component/pages/TestPage.js';
 import VideoPage from './component/pages/VIdeoPage.js';
+import './i18n.js';
 
 function App() {
   return (

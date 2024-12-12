@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 import RightMenu from "./RightMenu";
 import Profile from "./Profile";
 import { useUser } from "../../api/context/UserProfile";
+import { useTranslation } from "react-i18next";
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,6 +25,7 @@ const useIsMobile = () => {
 
 const MapPage = () => {
   // Координаты маркеров
+  const { t } = useTranslation();
   const { user } = useUser();
   const [showLeftPanel, setShowLeftPanel] = useState(true);
   const [showRightPanel, setShowRightPanel] = useState(false);
@@ -90,9 +93,9 @@ const MapPage = () => {
                     </div>
                 ) : (
                     <div className="menu">
-                        <h1 onClick={handleMapClick}>CITY MAP</h1>
-                        <h1 onClick={handleInvestigClick}>INVESTIGATION</h1>
-                        <h1 onClick={handleTutorialClick}>TUTORIAL</h1>
+                        <h1 onClick={handleMapClick}>{t('header.map')}</h1>
+                        <h1 onClick={handleInvestigClick}>{t('header.investigations')}</h1>
+                        <h1 onClick={handleTutorialClick}>{t('header.tutorial')}</h1>
                     </div>
                 )}
                 <div>
