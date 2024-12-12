@@ -40,8 +40,8 @@
     padding-top: 10%;
     color: #1D587A;
 }
-img {
-    margin: auto;
-    width: 8vw; /* Ширина картинки */
-    height: auto; /* Высота будет пропорциональной */
+.achieves-main-panel .achieves-list img {
+        margin: auto;
+        width: 8vw; /* Ширина картинки */
+        height: auto; /* Высота будет пропорциональной */
   }
