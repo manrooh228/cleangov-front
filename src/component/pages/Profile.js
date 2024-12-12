@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { API_BASE_URL } from "../../api/API_BASE_URL";
 
 const Profile = () => {
-    const { user } = useUser();
+    const { user, setUser } = useUser();
     const [showAchievements, setShowAchievements] = useState(false);
     const [achievements, setAchievements] = useState([]);
     const { t } = useTranslation();
@@ -16,6 +16,9 @@ const Profile = () => {
         setShowAchievements((prev) => !prev);
     };
 
+    const handleLogout = () => {
+        window.location.href = "/login";
+    };
     useEffect(() => {
         // Запросить достижения пользователя с сервера
         const fetchAchievements = async () => {
@@ -56,7 +59,7 @@ const Profile = () => {
                 <div className="profile-button">
                     <h2>{t("profile.req")}</h2>
                 </div>
-                <div className="profile-button">
+                <div className="profile-button" onClick={handleLogout}>
                     <h2>{t("profile.log-out")}</h2>
                 </div>
             </div>

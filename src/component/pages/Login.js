@@ -6,13 +6,15 @@ import Header from "./Header.js";
 import { useUser } from "../../api/context/UserProfile.js";
 
 const Login = () => {
+    
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { setUser } = useUser();
 
-
+    setUser(null); 
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await login({ username, password });
