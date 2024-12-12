@@ -45,28 +45,28 @@ const TutorialMain = () => {
                         <div className="elements">
                             <div className = "AboutUs">
                                 <i class='bx bxs-chip'></i>
-                                <h5>About us</h5>
+                                <h5>{t('menu.about')}</h5>
                             </div>
                             <div className = "UsedMat">
                                 <i class='bx bxs-pin' ></i>
-                                <h5>Used materials</h5>
+                                <h5>{t('menu.use')}</h5>
                             </div>
                         </div>
                     </div>
-                    // mobile verssion
+                    // mobile version
                 ) : (
                     <div className="additional-panel">
                         <div className="panel-name">
                             <div className="panel-title">
-                                <h2>Additional information</h2>
+                                <h2>{t('tutorial.additional')}</h2>
                             </div>  
                         </div>
                         <div className="AboutUs-panel">
-                            <h2>About Us</h2>
+                            <h2>{t('menu.about')}</h2>
                             <i class='bx bx-chevron-right'></i>
                         </div>
                         <div className="UsedMaterials-panel">
-                            <h2>Used materials</h2>
+                            <h2>{t('menu.use')}</h2>
                             <i class='bx bx-chevron-right'></i>
                         </div>
                     </div>

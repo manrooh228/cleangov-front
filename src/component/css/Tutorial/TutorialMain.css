@@ -12,7 +12,7 @@
     row-gap: 1rem;
 }
 
-/* TUORIAL PANEL */
+/* TUTORIAL PANEL */
 .tutorial-main-page .tutorial-panel {
     width: 400px;
     padding: 1vw;
@@ -81,9 +81,6 @@
 }
 
 
-
-
-
 /* Additional Panel */
 
 .tutorial-main-page .additional-panel {
@@ -95,7 +92,7 @@
     border-radius: 15px;
     word-break:keep-all;
     text-align: left;
-    margin: 3px 0;
+    margin: 0 0;
     align-content: start;   
     box-shadow: 3px 5px 20px #1D587A;
 }
@@ -110,7 +107,7 @@
     background: #fff;
     border-radius: 15px;
     display: flex;
-    gap: 320px;
+    gap: 363px;
     margin: 3px;
     margin-bottom: 4vh;
     align-content: start;   
@@ -119,11 +116,11 @@
 
 .tutorial-main-page .additional-panel .UsedMaterials-panel {
     height: 8vh;
-    padding: 20px;
+    padding: 2vh 20px;
     background: #fff;
     border-radius: 15px;
     display: flex;
-    gap: 245px;
+    gap: 235px 80px;
     margin: 3px;
     margin-bottom: 4vh;
     align-content: start;   

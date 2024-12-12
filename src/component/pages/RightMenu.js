@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/RightMenu.css"
+import { useTranslation } from "react-i18next";
+import { useUser } from "../../api/context/UserProfile";
+
 import "../css/Materials.css"
 
 const RightMenu = ({ showMaterials, toggleMaterials }) => {
     console.log("RightMenu rendered");
 
+const RightMenu = () => {
+    const { user } = useUser();
+    const {t} = useTranslation();
+    console.log(user);
+    
     return (
       <>
       <div className="right-menu-main">
@@ -12,19 +20,19 @@ const RightMenu = ({ showMaterials, toggleMaterials }) => {
         <h1>CleanGOV</h1>
       </div>
       <div className="right-menu-panel">
-          <h2>Select a City (In Work)</h2>
+          <h2>{t("menu.sel")}</h2>
       </div>
       <div className="right-menu-panel1">
-          <h2>Preferences</h2>
+          <h2>{t("menu.pre")}</h2>
       </div>
       <div className="right-menu-panel">
-          <h2>Write a Report</h2>
+          <h2>{t("menu.rep")}</h2>
       </div>
       <div className="right-menu-panel" onClick={toggleMaterials}>
-          <h2>Used Materials</h2>
+          <h2>{t("menu.use")}</h2>
       </div>  
       <div className="right-menu-panel">
-          <h2>About Us</h2>
+          <h2>{t("menu.about")}</h2>
       </div>
   </div>
   
@@ -37,5 +45,26 @@ const RightMenu = ({ showMaterials, toggleMaterials }) => {
   </>
     )};
   
+
+
+const SettingsMenu = () => {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleSettings = () => {
+      setIsOpen(!isOpen);
+    };
+  
+    return (
+      <div className="menu-item">
+        <button className="menu-button" onClick={toggleSettings}>
+          Настройки
+        </button>
+        <div className={`settings-content ${isOpen ? "open" : ""}`}>
+          <button className="submenu-button">Язык</button>
+          <button className="submenu-button">Сменить тему</button>
+        </div>
+      </div>
+    );
+  };
 
 export default RightMenu;
