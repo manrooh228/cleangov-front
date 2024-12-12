@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useUser } from "../../api/context/UserProfile";
 import "../css/Materials.css";
 import "../css/Preferences.css";
+import "../css/Report.css";
 
 
 const RightMenu = () => {
@@ -12,7 +13,7 @@ const RightMenu = () => {
   const { t , i18n} = useTranslation();
     const [showPreferences, setShowPreferences] = useState(false);
     const [showLanguage, setshowLanguage] = useState(false);
-
+    const [showReports, setshowReports] = useState(false)
     const currentLanguage = i18n.language;
 
     const changeLanguage = (lng) => {
@@ -26,6 +27,9 @@ const RightMenu = () => {
     }
     const handlePreferencesClick = () => {
         setShowPreferences((prev) => !prev);
+    }
+    const handleReportsClick = () => {
+        setshowReports((prev) => !prev)
     }
 
   return (
