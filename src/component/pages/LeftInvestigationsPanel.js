@@ -3,9 +3,11 @@ import { getAvailableInvestigations, getTasksWithProgress } from "../../api/Inve
 import "../css/LeftInvestigationsPanel.css";
 import { useUser } from "../../api/context/UserProfile";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 const LeftInvestigationsPanel = () => {
     const { t } = useTranslation();
+    const navigate  = useNavigate();
     const { user } = useUser(); // Получаем данные пользователя из контекста
     const [availableInvestigations, setAvailableInvestigations] = useState([]);
     const [ongoingTasks, setOngoingTasks] = useState([]);
@@ -16,7 +18,7 @@ const LeftInvestigationsPanel = () => {
         if (!user || !user.id) {
             return;
         }
-
+    
         // Загружаем доступные дела
         const fetchAvailableInvestigations = async () => {
             try {
@@ -40,7 +42,9 @@ const LeftInvestigationsPanel = () => {
         fetchAvailableInvestigations();
         fetchOngoingInvestigations();
     }, [user]);
-
+    const handleStartClick = (investigationId) => {
+        navigate(`/tasks/${investigationId}`);
+    };
     return (
         <div className="inv-leftpanel-main">
             {(!user || !user.id) ? (
@@ -57,7 +61,7 @@ const LeftInvestigationsPanel = () => {
                             <ul>
                                 {availableInvestigations.length > 0 ? (
                                     availableInvestigations.map((investigation) => (
-                                        <li key={investigation.id}>{investigation.name}</li>
+                                        <li onClick={() => handleStartClick(investigation.id)} key={investigation.id}>{investigation.name}</li>
                                     ))
                                 ) : (
                                     <li>{t("left-panel.no-avail")}</li>
